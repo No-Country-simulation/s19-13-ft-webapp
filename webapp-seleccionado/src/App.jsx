@@ -1,5 +1,10 @@
+import CreationsElements from './modules/pages/CreationsElements/CreationsElements.jsx';
 function App() {
-  return <></>;
+  return (
+    <>
+      <CreationsElements></CreationsElements>
+    </>
+  );
 }
 
 export default App;
