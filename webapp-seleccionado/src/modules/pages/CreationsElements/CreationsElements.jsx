@@ -1,28 +1,18 @@
-import { useState } from 'react';
+import PanelCreatorComponent from './components/PanelCreatorComponent.jsx';
+import PreviewCreatorComponent from './components/PreviewCreatorComponent.jsx';
+import { CreatorElementProvider } from '../../../context/CreatorElementsContext.jsx';
+import Title from './components/Title.Component.jsx';
 const CreationsElements = () => {
-  const [game, setGame] = useState({
-    title: '',
-    category: '',
-    autor: '',
-    description: '',
-    transitions: '',
-    game: [],
-  });
-
   return (
-    <aside className='flex w-[1000px] mx-auto h-[500px] gap-2'>
-      <div className='bg-green-300 w-1/3 flex flex-col justify-center items-center p-4'>
-        <div className='flex flex-col justify-center  items-center border-2 border-slate-400 rounded-xl'>
-          <p className='py-4'>
-            Describe aquí los acertijos de forma clara y sin ambigüedades.
-          </p>
-          <button className='bg-white px-8 py-4 w-1/2 border-red-500 border-solid border-2 rounded-xl'>
-            Agregar consigna
-          </button>
+    <section className='flex flex-col w-[1000px] mx-auto h-[600px] gap-2 mt-16 bg-green-400'>
+      <CreatorElementProvider>
+        <Title></Title>
+        <div className='flex gap-2'>
+          <PanelCreatorComponent></PanelCreatorComponent>
+          <PreviewCreatorComponent></PreviewCreatorComponent>
         </div>
-      </div>
-      <div className='bg-red-300 w-2/3 '></div>
-    </aside>
+      </CreatorElementProvider>
+    </section>
   );
 };
 
