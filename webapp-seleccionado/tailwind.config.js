@@ -2,7 +2,23 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+
+fontFamily:{
+  Pangolin: ["Pangolin", "cursiva"],
+  Roboto:["Roboto" , "sans-serif"]
+
+
+
+},
+
+colors:{
+
+  "AzulM":"#2546A5"
+}
+
+
+    },
   },
   plugins: [],
 };

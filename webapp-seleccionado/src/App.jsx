@@ -1,8 +1,9 @@
-import CreationsElements from './modules/pages/CreationsElements/CreationsElements.jsx';
+
+import Templates from './modules/pages/CreationsElements/templates.jsx';
 function App() {
   return (
     <>
-      <CreationsElements></CreationsElements>
+      <Templates></Templates>
     </>
   );
 }
