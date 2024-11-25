@@ -13,12 +13,22 @@ fontFamily:{
 },
 
 colors:{
+  "ColorR":"#E4EBFF",
+   "ColorP":"#6F8DE5",
+  "AzulM":"#2546A5",
+  "GLT":"linear-gradient(180deg, #E4EBFF 0%, #6F8DE5 100%);"
+},
+backgroundImage :{
 
-  "AzulM":"#2546A5"
+  "custom-l":"linear-gradient(180deg, #E4EBFF 0%, #6F8DE5 100%)"
 }
-
 
     },
   },
   plugins: [],
 };
+/* Plantillas */
+
+
+
+
