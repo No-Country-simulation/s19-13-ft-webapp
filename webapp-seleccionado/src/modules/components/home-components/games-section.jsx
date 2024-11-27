@@ -12,7 +12,7 @@ const GameSection = () =>{
         <div className='bg-blue-600'>
                 <h1 className='text-center font-bold text-white'>Nuestras Plantillas</h1>
 
-                <section className='grid grid-cols-5 p-8 gap-8 ' >
+                <section className='grid grid-rows-5 p-8 gap-8 md:grid-cols-5 md:grid-rows-2  ' >
                     <picture className='flex flex-col justify-center items-center gap-4'>
                         <img src={CrucigramaLogo} alt=""  className=' w-24 h-24'/>
                         <p className='text-white text-center'>Crucigrama</p>
