@@ -1,10 +1,11 @@
-import CreatorComponent from './CreatorComponent';
-import { useState } from 'react';
+import CreatorComponent from './CreatorComponent.Component';
+import { useState, useContext } from 'react';
 import PreviewStatic from './PreviewStatic.Component';
 import PreviewEdit from './PreviewEdit.Component';
+import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
 
 const PreviewCreatorComponent = () => {
-  const [previewGame, setPreviewGame] = useState([]);
+  const { previewGame, setPreviewGame } = useContext(CreatorElementsContext);
   const [editLevelId, setEditLevelId] = useState(null);
 
   const handleAddLevel = level => {
@@ -61,8 +62,8 @@ const PreviewCreatorComponent = () => {
   };
 
   return (
-    <div className='bg-red-300 w-2/3 p-2 pe-6 flex flex-col items-center gap-2'>
-      <div className='max-h-96 overflow-y-auto w-1/2'>
+    <div className='bg-slate-200 w-2/3 px-auto pt-4 flex flex-col items-center gap-2'>
+      <div className='max-h-96 overflow-y-auto w-[95%]'>
         {previewGame.length > 0 &&
           previewGame.map(l => {
             const isEditing = editLevelId === l.id;
@@ -86,7 +87,9 @@ const PreviewCreatorComponent = () => {
             );
           })}
       </div>
-      <CreatorComponent handleAddLevel={handleAddLevel}></CreatorComponent>
+      {previewGame.length < 10 && (
+        <CreatorComponent handleAddLevel={handleAddLevel}></CreatorComponent>
+      )}
     </div>
   );
 };

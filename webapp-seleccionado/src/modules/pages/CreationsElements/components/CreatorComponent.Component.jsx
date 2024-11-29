@@ -1,12 +1,12 @@
 import { useState, useContext } from 'react';
-import { CreatorElementsContext } from '../../../../context/CreatorElementsContext';
+import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
 import {
   INITIAL_CREATOR,
   INITIAL_DIFICULTY,
   INITIAL_NIVEL,
 } from '../../../../const/initialStates';
-import LevelDescription from './LevelDescription';
-import LevelOptions from './LevelOptions';
+import LevelDescription from './LevelDescription.Component';
+import LevelOptions from './LevelOptions.Component';
 const CreatorComponent = ({ handleAddLevel }) => {
   //extraccion del contexto
   const {
@@ -21,9 +21,6 @@ const CreatorComponent = ({ handleAddLevel }) => {
   const [error, setError] = useState('');
   const [inputSelected, setInputSelected] = useState(-1);
 
-  const { string, options } = level;
-  const validOptionCorrect = options.some(o => o.correct);
-  const validPrompt = options.every(o => o.prompt.trim() !== '');
   //manejador de estados
 
   const handleLevel = param => {
@@ -62,6 +59,11 @@ const CreatorComponent = ({ handleAddLevel }) => {
   //funcion para el sumbit del nivel
 
   const handlePreview = () => {
+    const { string, options } = level;
+    const validOptionCorrect = options.some(o => o.correct);
+    const validPrompt = options.every(
+      o => typeof o.prompt === 'string' && o.prompt.trim() !== ''
+    );
     if (string.trim() === '') {
       setError('Debes agregar una consigna valida');
     } else if (!validPrompt) {
@@ -82,22 +84,24 @@ const CreatorComponent = ({ handleAddLevel }) => {
     if (action === 'softReset') {
       handleSelectedDificulty(INITIAL_DIFICULTY);
       handleSelectedCreator({ optionSelected: false });
+      setError(null);
       setLevel(prev => {
-        prev.options.forEach((_, index) => {
+        const newOptions = prev.options.map((_, index) => {
           handleLevelOptions(index, 'prompt', ''); // Resetear el prompt
           handleLevelOptions(index, 'correct', false); // Resetear el correct
         });
-        return { ...prev };
+        return { ...prev, newOptions };
       });
     } else {
       handleLevel({ string: '' });
       handleSelectedCreator(INITIAL_CREATOR);
       handleSelectedDificulty(INITIAL_DIFICULTY);
+      setError(null);
     }
   };
 
   return (
-    <div className='w-full h-32 bg-white rounded-md flex flex-col justify-center items-center'>
+    <div className='w-[95%] shadow-lg min-h-52 py-2 bg-white rounded-md flex flex-col justify-between items-center'>
       {selectedCreator.textSelected === true && (
         <LevelDescription
           level={level}
@@ -112,11 +116,13 @@ const CreatorComponent = ({ handleAddLevel }) => {
           inputSelected={inputSelected}
         ></LevelOptions>
       )}
-      <div className='flex-grow' />
-      <div>{error && <p className='text-red-500'>{error}</p>}</div>
+
+      <div className='mb-2'>
+        {error && <p className='text-red-500'>{error}</p>}
+      </div>
       <div>
         <button
-          className='mx-2'
+          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
           onClick={() => {
             handleReset('softReset');
           }}
@@ -124,14 +130,17 @@ const CreatorComponent = ({ handleAddLevel }) => {
           Quitar opciones
         </button>
         <button
-          className='mx-2'
+          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
           onClick={() => {
             handleReset();
           }}
         >
           Reset
         </button>
-        <button className='mx-2' onClick={() => handlePreview()}>
+        <button
+          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
+          onClick={() => handlePreview()}
+        >
           Agregar historia
         </button>
       </div>

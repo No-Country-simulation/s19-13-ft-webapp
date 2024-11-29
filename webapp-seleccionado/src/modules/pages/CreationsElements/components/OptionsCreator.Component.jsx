@@ -1,6 +1,6 @@
-import { CreatorElementsContext } from '../../../../context/CreatorElementsContext.jsx';
+import { CreatorElementsContext } from '../../../../context/CreatorElements.Context.jsx';
 import { useContext } from 'react';
-const OptionsCreatorComponents = ({ options }) => {
+const OptionsCreatorComponents = ({ options, handleShowPanel }) => {
   const { selectedCreator, handleSelectedCreator, handleSelectedDificulty } =
     useContext(CreatorElementsContext);
   let dificulty = '';
@@ -18,25 +18,26 @@ const OptionsCreatorComponents = ({ options }) => {
       dificulty = 'Desconocido';
       break;
   }
-  const colors = ['bg-red-500', 'bg-green-500', 'bg-blue-500', 'bg-orange-500'];
+
   return (
     <>
-      <h3>{dificulty}</h3>
-      <div className='flex gap-2 h-20 border-black border-2 w-full my-2'>
+      <h3 className='px-4 text-slate-200 font-semibold'>{`${dificulty}:`}</h3>
+      <div className='flex flex-col  w-full pb-2 px-4'>
         {Array.from({ length: options }).map((_, i) => (
           <button
-            className={`p-2 w-full border-red-500 border-solid border-2 rounded-xl ${colors[i]}`}
+            className={`p-1 w-full text-left border-black border-solid border-2 rounded-md bg-slate-200`}
             disabled={selectedCreator.optionSelected === true}
             onClick={() => {
               handleSelectedCreator({ optionSelected: true }),
                 handleSelectedDificulty({
                   dificulty: dificulty,
                   numberOptions: options,
-                });
+                }),
+                handleShowPanel('optionsPanel');
             }}
             key={i}
           >
-            {<p>opción {i + 1}</p>}
+            {<p>Respuesta {i + 1}</p>}
           </button>
         ))}
       </div>

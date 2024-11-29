@@ -18,3 +18,13 @@ export const INITIAL_NIVEL = {
     },
   ],
 };
+
+export const INITIAL_GAME = {
+  title: '',
+  category: '',
+  autor: '',
+  description: '',
+  // transitions: '',
+  dificulty: '',
+  game: [],
+};
