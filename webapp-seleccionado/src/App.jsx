@@ -5,7 +5,7 @@ import Home from './modules/pages/Home-page/Home.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <>
+    <body className='bg-gradient-to-t from-blueButton to-whitePrimary'>
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
@@ -17,7 +17,7 @@ function App() {
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
-    </>
+    </body>
   );
 }
 

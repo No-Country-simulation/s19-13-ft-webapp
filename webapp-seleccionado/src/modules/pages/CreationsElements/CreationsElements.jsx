@@ -18,7 +18,7 @@ const FinalFormWrapper = () => {
 };
 const CreationsElements = () => {
   return (
-    <div className='flex flex-col w-[1000px] mx-auto min-h-[600px] gap-2  relative'>
+    <div className='flex flex-col w-[1000px] mx-auto min-h-[600px] gap-2 my-4 relative'>
       <CreatorElementProvider>
         <Title></Title>
         <div className='flex gap-2 grow'>

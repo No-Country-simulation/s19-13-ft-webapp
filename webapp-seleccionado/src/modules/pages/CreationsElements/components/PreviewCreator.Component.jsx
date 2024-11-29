@@ -62,7 +62,10 @@ const PreviewCreatorComponent = () => {
   };
 
   return (
-    <div className='bg-slate-200 w-2/3 px-auto pt-4 flex flex-col items-center gap-2'>
+    <div className='bg-white w-2/3 px-auto pt-4 flex flex-col items-center gap-2'>
+      {previewGame.length < 10 && (
+        <CreatorComponent handleAddLevel={handleAddLevel}></CreatorComponent>
+      )}
       <div className='max-h-96 overflow-y-auto w-[95%]'>
         {previewGame.length > 0 &&
           previewGame.map(l => {
@@ -87,9 +90,6 @@ const PreviewCreatorComponent = () => {
             );
           })}
       </div>
-      {previewGame.length < 10 && (
-        <CreatorComponent handleAddLevel={handleAddLevel}></CreatorComponent>
-      )}
     </div>
   );
 };

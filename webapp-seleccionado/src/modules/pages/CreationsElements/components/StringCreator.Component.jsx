@@ -10,7 +10,7 @@ const StringCreatorComponent = () => {
   return (
     <div className=' w-full h-16 relative'>
       {textVisible && (
-        <div className='custom-button pb-4 bg-slate-200 rounded-tl-md rounded-tr-md rounded-br-md p-4 h-20 z-10 right-[0%] translate-x-[110%] bottom-0'>
+        <div className='custom-button pb-4 bg-white rounded-tl-md rounded-tr-md rounded-br-md p-4 h-20 z-10 right-[0%] translate-x-[110%] bottom-0'>
           <p className='text-blueSecondary font-semibold'>
             Describe aquí los acertijos de forma clara y sin ambigüedades.
           </p>
@@ -25,7 +25,7 @@ const StringCreatorComponent = () => {
         className={`p-4 w-full text-lg flex items-center justify-center gap-2 ${
           selectedCreator.textSelected
             ? 'text-slate-200 bg-blueSecondary animate-bg'
-            : 'bg-slate-200  text-blueSecondary animate-bg'
+            : 'bg-white  text-blueSecondary animate-bg'
         }  `}
         onMouseEnter={() => {
           setTextVisible(true);

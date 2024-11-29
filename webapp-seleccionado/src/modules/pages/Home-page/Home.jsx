@@ -9,6 +9,7 @@ import MemoryLogo from '../../../assets/Home-Images/memoria-logo.png';
 import SopaLogo from '../../../assets/Home-Images/sopa-logo.png';
 import ObjetivoImage1 from '../../../assets/Home-Images/objetivo-image-1.png';
 import ObjetivoImage2 from '../../../assets/Home-Images/objetivo-image-2.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -27,9 +28,11 @@ const Home = () => {
             alumno, permitiendole <strong>retener mejor la información</strong>{' '}
             al involucrarse activamente en el proceso de aprendizaje.
           </p>
-          <button className='bg-white text-pink-500 border-pink-500 border-solid border-2 p-1 rounded-md hover:text-white hover:bg-pink-500 transition duration-500'>
-            Crear actividad
-          </button>
+          <Link to='crear-juego'>
+            <button className='bg-white text-pink-500 border-pink-500 border-solid border-2 p-1 rounded-md hover:text-white hover:bg-pink-500 transition duration-500'>
+              Crear actividad
+            </button>
+          </Link>
         </section>
       </div>
 

@@ -22,15 +22,15 @@ const PanelCreatorComponent = () => {
 
   return (
     // ver como resolver el tema del overflow antes estaba esta propiedad: overflow-y-auto
-    <aside className='bg-slate-200  w-1/3 flex flex-col justify-between items-center'>
-      <div className='flex flex-col justify-start items-center'>
+    <aside className='bg-white  w-1/3 flex flex-col justify-between items-center pb-2'>
+      <div className='flex flex-col justify-start items-center w-full'>
         <StringCreatorComponent></StringCreatorComponent>
         <div className='relative w-full'>
           <button
             className={`flex gap-2 justify-center items-center  w-full h-16 text-lg ${
               showPanel.optionsPanel
-                ? ' bg-blueSecondary text-slate-200'
-                : ' text-blueSecondary  bg-slate-200'
+                ? ' bg-blueSecondary text-white'
+                : ' text-blueSecondary  bg-white'
             }`}
             onClick={() => {
               handleShowPanel('optionsPanel');
@@ -65,8 +65,8 @@ const PanelCreatorComponent = () => {
         <button
           className={`${
             showPanel.transitionsPanel
-              ? 'text-slate-200  bg-blueSecondary'
-              : 'text-blueSecondary  bg-slate-200'
+              ? 'text-white  bg-blueSecondary'
+              : 'text-blueSecondary  bg-white'
           } flex gap-2 justify-center items-center  w-full h-16 text-lg`}
           onClick={() => handleShowPanel('transitionsPanel')}
         >
@@ -85,7 +85,7 @@ const PanelCreatorComponent = () => {
         {showPanel.transitionsPanel && <TransitionsPanel></TransitionsPanel>}
       </div>
       <button
-        className='text-slate-200 bg-blueSecondary rounded-full w-32 h-16 text-lg'
+        className='text-white bg-blueSecondary rounded-full w-32 h-16 text-lg'
         onClick={() => {
           handleFinalForm();
         }}
