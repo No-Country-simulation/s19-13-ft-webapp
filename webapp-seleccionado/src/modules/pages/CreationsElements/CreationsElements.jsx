@@ -1,28 +1,33 @@
-import { useState } from 'react';
-const CreationsElements = () => {
-  const [game, setGame] = useState({
-    title: '',
-    category: '',
-    autor: '',
-    description: '',
-    transitions: '',
-    game: [],
-  });
+import PanelCreatorComponent from './components/PanelCreator.Component.jsx';
+import PreviewCreatorComponent from './components/PreviewCreator.Component.jsx';
+import { CreatorElementProvider } from '../../../context/CreatorElements.Context.jsx';
+import Title from './components/Title.Component.jsx';
+import FinalForm from './components/FinalForm.Component.jsx';
+import { useContext } from 'react';
+import { CreatorElementsContext } from '../../../context/CreatorElements.Context.jsx';
 
+const FinalFormWrapper = () => {
+  const { showFinalForm } = useContext(CreatorElementsContext);
+  if (showFinalForm.error) {
+    return <></>;
+  } else if (showFinalForm.finalForm) {
+    return <FinalForm></FinalForm>;
+  } else {
+    return null;
+  }
+};
+const CreationsElements = () => {
   return (
-    <aside className='flex w-[1000px] mx-auto h-[500px] gap-2'>
-      <div className='bg-green-300 w-1/3 flex flex-col justify-center items-center p-4'>
-        <div className='flex flex-col justify-center  items-center border-2 border-slate-400 rounded-xl'>
-          <p className='py-4'>
-            Describe aquí los acertijos de forma clara y sin ambigüedades.
-          </p>
-          <button className='bg-white px-8 py-4 w-1/2 border-red-500 border-solid border-2 rounded-xl'>
-            Agregar consigna
-          </button>
+    <div className='flex flex-col w-[1000px] mx-auto min-h-[600px] gap-2  relative'>
+      <CreatorElementProvider>
+        <Title></Title>
+        <div className='flex gap-2 grow'>
+          <PanelCreatorComponent></PanelCreatorComponent>
+          <PreviewCreatorComponent></PreviewCreatorComponent>
         </div>
-      </div>
-      <div className='bg-red-300 w-2/3 '></div>
-    </aside>
+        <FinalFormWrapper></FinalFormWrapper>
+      </CreatorElementProvider>
+    </div>
   );
 };
 

@@ -1,0 +1,15 @@
+.custom-button {
+  position: absolute;
+}
+
+.custom-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-90%);
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #e2e8f0;
+  border-bottom: 10px solid #e2e8f0;
+}
