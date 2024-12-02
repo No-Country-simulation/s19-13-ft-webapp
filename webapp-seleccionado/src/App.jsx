@@ -2,6 +2,7 @@ import CreationsElements from './modules/pages/CreationsElements/CreationsElemen
 import Navbar from './modules/components/navBar/navBar.jsx';
 import Footer from './modules/components/footer/footer.jsx';
 import Home from './modules/pages/Home-page/Home.jsx';
+import Templates from './modules/pages/Plantillas/templates.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -13,7 +14,15 @@ function App() {
           <Route
             path='/crear-juego'
             element={<CreationsElements></CreationsElements>}
+
           ></Route>
+
+<Route
+            path='/Plantillas'
+            element={<Templates></Templates>}
+
+          ></Route>
+          
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
