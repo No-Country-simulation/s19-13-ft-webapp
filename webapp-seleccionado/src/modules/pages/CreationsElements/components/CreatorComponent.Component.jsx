@@ -101,7 +101,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
   };
 
   return (
-    <div className='w-[95%] shadow-lg min-h-52 py-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-black'>
+    <div className='w-[95%] shadow-lg min-h-52 p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-black'>
       {selectedCreator.textSelected === true && (
         <LevelDescription
           level={level}
