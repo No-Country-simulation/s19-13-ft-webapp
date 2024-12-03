@@ -1,0 +1,54 @@
+{
+  "title": "Desafío Matemático",
+  "category": "Matemáticas",
+  "autor": "OpenAI",
+  "description": "Pon a prueba tus habilidades resolviendo problemas matemáticos con diferentes niveles de dificultad y cantidades variables de opciones.",
+  "transitions": "Desaparecer/Fundido",
+  "dificulty": "Intermedio",
+  "game": [
+    {
+      "id": 1,
+      "string": "¿Cuánto es 5 + 3?",
+      "options": [
+        { "prompt": "8", "correct": true },
+        { "prompt": "7", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "string": "¿Cuál es el resultado de 12 - 4?",
+      "options": [
+        { "prompt": "8", "correct": true },
+        { "prompt": "6", "correct": false },
+        { "prompt": "10", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "string": "Resuelve: 3 × 4",
+      "options": [
+        { "prompt": "12", "correct": true },
+        { "prompt": "15", "correct": false },
+        { "prompt": "10", "correct": false },
+        { "prompt": "9", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "string": "¿Cuál es el cociente de 16 ÷ 2?",
+      "options": [
+        { "prompt": "8", "correct": true },
+        { "prompt": "7", "correct": false },
+        { "prompt": "6", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "string": "¿Cuánto es 25 + 30 - 15?",
+      "options": [
+        { "prompt": "45", "correct": true },
+        { "prompt": "40", "correct": false }
+      ]
+    }
+  ]
+}
