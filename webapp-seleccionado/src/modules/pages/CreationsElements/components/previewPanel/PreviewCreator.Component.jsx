@@ -2,19 +2,19 @@ import CreatorComponent from './CreatorComponent.Component';
 import { useState, useContext } from 'react';
 import PreviewStatic from './PreviewStatic.Component';
 import PreviewEdit from './PreviewEdit.Component';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
 
 const PreviewCreatorComponent = () => {
   const { previewGame, setPreviewGame } = useContext(CreatorElementsContext);
   const [editLevelId, setEditLevelId] = useState(null);
 
   const handleAddLevel = level => {
-    setPreviewGame(prev => [...prev, { ...level, id: prev.length + 1 }]);
+    setPreviewGame(prev => [...prev, { ...level, level: prev.length + 1 }]);
   };
 
   const handleEditLevel = (id, key, value) => {
     setPreviewGame(prev =>
-      prev.map(l => (l.id === id ? { ...l, [key]: value } : l))
+      prev.map(l => (l.level === id ? { ...l, [key]: value } : l))
     );
   };
 
@@ -51,10 +51,10 @@ const PreviewCreatorComponent = () => {
 
   const handleDeleteLevel = id => {
     setPreviewGame(prev => {
-      const previewGameWithoutLevel = prev.filter(l => l.id !== id);
+      const previewGameWithoutLevel = prev.filter(l => l.level !== id);
       const newPreviewGame = previewGameWithoutLevel.map((l, i) => ({
         ...l,
-        id: i + 1,
+        level: i + 1,
       }));
       return newPreviewGame;
     });

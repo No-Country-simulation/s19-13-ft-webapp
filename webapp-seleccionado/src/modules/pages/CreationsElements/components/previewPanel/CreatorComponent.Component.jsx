@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
 import {
   INITIAL_CREATOR,
   INITIAL_DIFICULTY,
   INITIAL_NIVEL,
-} from '../../../../const/initialStates';
+} from '../../../../../const/initialStates';
 import LevelDescription from './LevelDescription.Component';
 import LevelOptions from './LevelOptions.Component';
 const CreatorComponent = ({ handleAddLevel }) => {

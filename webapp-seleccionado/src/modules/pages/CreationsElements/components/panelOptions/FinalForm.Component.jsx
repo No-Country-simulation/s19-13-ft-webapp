@@ -1,11 +1,12 @@
 import { useState, useContext } from 'react';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
 import ButtonDificulty from './ButtonDificulty.Component';
 const FinalForm = () => {
   const { game, handleSetGame, createFinalGame } = useContext(
     CreatorElementsContext
   );
   const [errors, setErrors] = useState({
+    id: false,
     title: false,
     category: false,
     autor: false,
@@ -17,7 +18,7 @@ const FinalForm = () => {
   const handleForm = () => {
     const newErrors = Object.fromEntries(
       Object.entries(game)
-        .filter(([key]) => key !== 'game')
+        .filter(([key]) => key !== 'game' && key !== 'id')
         .map(([key, value]) => [key, value.trim() === ''])
     );
     setErrors(newErrors);

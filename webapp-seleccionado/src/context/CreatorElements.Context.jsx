@@ -25,7 +25,10 @@ const CreatorElementProvider = ({ children }) => {
 
   const savedGames = newGame => {
     const games = JSON.parse(localStorage.getItem('games')) || [];
-    const updatedGames = [...games, newGame];
+    const addingLevelArray = [...games, newGame];
+    const updatedGames = addingLevelArray.map((g, index) => {
+      return { ...g, id: index + 1 };
+    });
     localStorage.setItem('games', JSON.stringify(updatedGames));
   };
 

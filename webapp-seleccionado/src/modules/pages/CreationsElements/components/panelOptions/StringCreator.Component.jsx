@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context.jsx';
-import { Icon } from '../../../components/Icon/Icon.Component.jsx';
-import '../styles/custom.Styles.css';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context.jsx';
+import { Icon } from '../../../../components/Icon/Icon.Component.jsx';
+import '../../styles/custom.Styles.css';
 const StringCreatorComponent = () => {
   const { selectedCreator, handleSelectedCreator } = useContext(
     CreatorElementsContext

@@ -1,9 +1,9 @@
-import { Icon } from '../../../components/Icon/Icon.Component';
+import { Icon } from '../../../../components/Icon/Icon.Component';
 const PreviewStatic = ({ l, handleEditLevelId }) => {
   return (
     <div className='w-full min-h-52 p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-blueSecondary mb-2'>
       <div className='flex justify-between w-full px-4 py-1'>
-        <label>{`Nivel ${l.id}`}</label>
+        <label>{`Nivel ${l.level}`}</label>
         <button
           onClick={() => {
             handleEditLevelId(l.id);

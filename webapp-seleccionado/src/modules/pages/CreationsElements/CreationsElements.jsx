@@ -1,8 +1,8 @@
-import PanelCreatorComponent from './components/PanelCreator.Component.jsx';
-import PreviewCreatorComponent from './components/PreviewCreator.Component.jsx';
+import PanelCreatorComponent from './components/panelOptions/PanelCreator.Component.jsx';
+import PreviewCreatorComponent from './components/previewPanel/PreviewCreator.Component.jsx';
 import { CreatorElementProvider } from '../../../context/CreatorElements.Context.jsx';
-import Title from './components/Title.Component.jsx';
-import FinalForm from './components/FinalForm.Component.jsx';
+import Title from './components/panelOptions/Title.Component.jsx';
+import FinalForm from './components/panelOptions/FinalForm.Component.jsx';
 import { useContext } from 'react';
 import { CreatorElementsContext } from '../../../context/CreatorElements.Context.jsx';
 

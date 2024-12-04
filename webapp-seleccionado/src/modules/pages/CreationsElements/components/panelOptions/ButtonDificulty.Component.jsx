@@ -1,4 +1,4 @@
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
 
 import { useContext } from 'react';
 const ButtonDificulty = ({ n }) => {

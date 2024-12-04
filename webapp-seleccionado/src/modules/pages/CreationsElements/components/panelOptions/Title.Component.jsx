@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
 
 const Title = () => {
   const { handleSetGame } = useContext(CreatorElementsContext);

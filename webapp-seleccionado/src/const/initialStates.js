@@ -9,7 +9,7 @@ export const INITIAL_DIFICULTY = {
 };
 
 export const INITIAL_NIVEL = {
-  id: 0,
+  level: 0,
   string: '',
   options: [
     {
@@ -20,6 +20,7 @@ export const INITIAL_NIVEL = {
 };
 
 export const INITIAL_GAME = {
+  id: '',
   title: '',
   category: '',
   autor: '',

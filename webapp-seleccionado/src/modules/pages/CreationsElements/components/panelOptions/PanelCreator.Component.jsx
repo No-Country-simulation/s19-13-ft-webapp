@@ -2,8 +2,8 @@ import StringCreatorComponent from './StringCreator.Component.jsx';
 import OptionsCreatorComponents from './OptionsCreator.Component.jsx';
 import { useState, useContext } from 'react';
 import TransitionsPanel from './TransitionsPanel.Component.jsx';
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context.jsx';
-import { Icon } from '../../../components/Icon/Icon.Component.jsx';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context.jsx';
+import { Icon } from '../../../../components/Icon/Icon.Component.jsx';
 
 const PanelCreatorComponent = () => {
   const { handleFinalForm } = useContext(CreatorElementsContext);

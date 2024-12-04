@@ -1,4 +1,4 @@
-import { CreatorElementsContext } from '../../../../context/CreatorElements.Context.jsx';
+import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context.jsx';
 import { useContext } from 'react';
 const OptionsCreatorComponents = ({ options, handleShowPanel }) => {
   const { selectedCreator, handleSelectedCreator, handleSelectedDificulty } =
