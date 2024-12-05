@@ -1,12 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import AnimatedContainer from './AnimatedContainer';
 
-function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer }) {
+function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer, transitionType }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+    <AnimatedContainer 
+      transitionType={transitionType}
       className=" bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full"
     >
       <h2 className="text-xl font-semibold mb-4 text-black">{question.string}</h2>
@@ -34,7 +32,7 @@ function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer }) {
           </button>
         ))}
       </div>
-    </motion.div>
+    </AnimatedContainer >
   );
 }
 

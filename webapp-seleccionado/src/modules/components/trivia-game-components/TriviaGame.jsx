@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  AnimatePresence } from 'framer-motion';
 import mathChallengeData from './Data/MathData.json';
 import QuestionCard from './QuestionCard.jsx';
 import ProgressBar from './ProgressBar.jsx';
@@ -45,6 +45,7 @@ function TriviaGame() {
           correctAnswers={correctAnswers}
           totalQuestions={mathChallengeData.game.length}
           onRestart={restartGame}
+          transitionType={mathChallengeData.transitions}
         />
       </div>
     );
@@ -74,6 +75,7 @@ function TriviaGame() {
           onAnswer={handleAnswer}
           isAnswered={isAnswered}
           selectedAnswer={selectedAnswer}
+          transitionType={mathChallengeData.transitions}
         />
       </AnimatePresence>
     </div>

@@ -1,0 +1,100 @@
+{
+  "title": "Desafío Matemático Avanzado",
+  "category": "Matemáticas",
+  "autor": "OpenAI",
+  "description": "Desafía tus habilidades con preguntas de matemáticas variadas que incluyen operaciones básicas, fracciones y potencias.",
+  "transitions": "Girar",
+  "dificulty": "Avanzado",
+  "game": [
+    {
+      "id": 1,
+      "string": "¿Cuánto es 7 × 6?",
+      "options": [
+        { "prompt": "42", "correct": true },
+        { "prompt": "36", "correct": false },
+        { "prompt": "49", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "string": "¿Cuál es el resultado de 45 ÷ 5?",
+      "options": [
+        { "prompt": "9", "correct": true },
+        { "prompt": "10", "correct": false },
+        { "prompt": "8", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "string": "¿Cuánto es 10²?",
+      "options": [
+        { "prompt": "100", "correct": true },
+        { "prompt": "20", "correct": false },
+        { "prompt": "1,000", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "string": "Resuelve: 15 + 25 - 10",
+      "options": [
+        { "prompt": "30", "correct": true },
+        { "prompt": "20", "correct": false },
+        { "prompt": "35", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "string": "¿Cuál es el valor de 3 × (4 + 5)?",
+      "options": [
+        { "prompt": "27", "correct": true },
+        { "prompt": "21", "correct": false },
+        { "prompt": "15", "correct": false }
+      ]
+    },
+    {
+      "id": 6,
+      "string": "Resuelve: 2³",
+      "options": [
+        { "prompt": "8", "correct": true },
+        { "prompt": "6", "correct": false },
+        { "prompt": "9", "correct": false }
+      ]
+    },
+    {
+      "id": 7,
+      "string": "¿Cuánto es 50 - (3 × 8)?",
+      "options": [
+        { "prompt": "26", "correct": true },
+        { "prompt": "34", "correct": false },
+        { "prompt": "42", "correct": false }
+      ]
+    },
+    {
+      "id": 8,
+      "string": "¿Cuál es el resultado de 5/10 + 2/10?",
+      "options": [
+        { "prompt": "7/10", "correct": true },
+        { "prompt": "1/2", "correct": false },
+        { "prompt": "3/5", "correct": false }
+      ]
+    },
+    {
+      "id": 9,
+      "string": "¿Cuánto es (6 × 6) ÷ 3?",
+      "options": [
+        { "prompt": "12", "correct": true },
+        { "prompt": "10", "correct": false },
+        { "prompt": "18", "correct": false }
+      ]
+    },
+    {
+      "id": 10,
+      "string": "Resuelve: 4 × 5 + 10",
+      "options": [
+        { "prompt": "30", "correct": true },
+        { "prompt": "50", "correct": false },
+        { "prompt": "40", "correct": false }
+      ]
+    }
+  ]
+}

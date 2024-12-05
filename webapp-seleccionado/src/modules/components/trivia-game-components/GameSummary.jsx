@@ -1,13 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import AnimatedContainer from './AnimatedContainer.jsx';
 
-function GameSummary({ correctAnswers, totalQuestions, onRestart }) {
+function GameSummary({ correctAnswers, totalQuestions, onRestart, transitionType }) {
   const percentage = (correctAnswers / totalQuestions) * 100;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
+    <AnimatedContainer
+      transitionType={transitionType}
       className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center"
     >
       <h2 className="text-2xl font-bold mb-4">¡Juego Terminado!</h2>
@@ -23,7 +22,7 @@ function GameSummary({ correctAnswers, totalQuestions, onRestart }) {
       >
         Jugar de nuevo
       </button>
-    </motion.div>
+    </AnimatedContainer>
   );
 }
 
