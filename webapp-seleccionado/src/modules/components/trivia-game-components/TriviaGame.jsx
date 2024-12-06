@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {  AnimatePresence } from 'framer-motion';
-import mathChallengeData from './Data/MathData.json';
+import mathChallengeData from './Data/MathData-2.json';
 import QuestionCard from './QuestionCard.jsx';
 import ProgressBar from './ProgressBar.jsx';
 import GameSummary from './GameSummary.jsx';
@@ -63,7 +63,7 @@ function TriviaGame() {
       </div>
 
       <ProgressBar
-        current={currentQuestion + 1}
+        current={mathChallengeData.game[currentQuestion].level}
         total={mathChallengeData.game.length}
         correct={correctAnswers}
       />

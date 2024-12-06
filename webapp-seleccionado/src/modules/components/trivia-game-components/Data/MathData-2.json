@@ -7,93 +7,93 @@
   "dificulty": "Avanzado",
   "game": [
     {
-      "id": 1,
-      "string": "¿Cuánto es 7 × 6?",
+      "level": 1,
+      "question": "¿Cuánto es 7 × 6?",
       "options": [
-        { "prompt": "42", "correct": true },
-        { "prompt": "36", "correct": false },
-        { "prompt": "49", "correct": false }
+        { "option": "42", "correct": true },
+        { "option": "36", "correct": false },
+        { "option": "49", "correct": false }
       ]
     },
     {
-      "id": 2,
-      "string": "¿Cuál es el resultado de 45 ÷ 5?",
+      "level": 2,
+      "question": "¿Cuál es el resultado de 45 ÷ 5?",
       "options": [
-        { "prompt": "9", "correct": true },
-        { "prompt": "10", "correct": false },
-        { "prompt": "8", "correct": false }
+        { "option": "9", "correct": true },
+        { "option": "10", "correct": false },
+        { "option": "8", "correct": false }
       ]
     },
     {
-      "id": 3,
-      "string": "¿Cuánto es 10²?",
+      "level": 3,
+      "question": "¿Cuánto es 10²?",
       "options": [
-        { "prompt": "100", "correct": true },
-        { "prompt": "20", "correct": false },
-        { "prompt": "1,000", "correct": false }
+        { "option": "100", "correct": true },
+        { "option": "20", "correct": false },
+        { "option": "1,000", "correct": false }
       ]
     },
     {
-      "id": 4,
-      "string": "Resuelve: 15 + 25 - 10",
+      "level": 4,
+      "question": "Resuelve: 15 + 25 - 10",
       "options": [
-        { "prompt": "30", "correct": true },
-        { "prompt": "20", "correct": false },
-        { "prompt": "35", "correct": false }
+        { "option": "30", "correct": true },
+        { "option": "20", "correct": false },
+        { "option": "35", "correct": false }
       ]
     },
     {
-      "id": 5,
-      "string": "¿Cuál es el valor de 3 × (4 + 5)?",
+      "level": 5,
+      "question": "¿Cuál es el valor de 3 × (4 + 5)?",
       "options": [
-        { "prompt": "27", "correct": true },
-        { "prompt": "21", "correct": false },
-        { "prompt": "15", "correct": false }
+        { "option": "27", "correct": true },
+        { "option": "21", "correct": false },
+        { "option": "15", "correct": false }
       ]
     },
     {
-      "id": 6,
-      "string": "Resuelve: 2³",
+      "level": 6,
+      "question": "Resuelve: 2³",
       "options": [
-        { "prompt": "8", "correct": true },
-        { "prompt": "6", "correct": false },
-        { "prompt": "9", "correct": false }
+        { "option": "8", "correct": true },
+        { "option": "6", "correct": false },
+        { "option": "9", "correct": false }
       ]
     },
     {
-      "id": 7,
-      "string": "¿Cuánto es 50 - (3 × 8)?",
+      "level": 7,
+      "question": "¿Cuánto es 50 - (3 × 8)?",
       "options": [
-        { "prompt": "26", "correct": true },
-        { "prompt": "34", "correct": false },
-        { "prompt": "42", "correct": false }
+        { "option": "26", "correct": true },
+        { "option": "34", "correct": false },
+        { "option": "42", "correct": false }
       ]
     },
     {
-      "id": 8,
-      "string": "¿Cuál es el resultado de 5/10 + 2/10?",
+      "level": 8,
+      "question": "¿Cuál es el resultado de 5/10 + 2/10?",
       "options": [
-        { "prompt": "7/10", "correct": true },
-        { "prompt": "1/2", "correct": false },
-        { "prompt": "3/5", "correct": false }
+        { "option": "7/10", "correct": true },
+        { "option": "1/2", "correct": false },
+        { "option": "3/5", "correct": false }
       ]
     },
     {
-      "id": 9,
-      "string": "¿Cuánto es (6 × 6) ÷ 3?",
+      "level": 9,
+      "question": "¿Cuánto es (6 × 6) ÷ 3?",
       "options": [
-        { "prompt": "12", "correct": true },
-        { "prompt": "10", "correct": false },
-        { "prompt": "18", "correct": false }
+        { "option": "12", "correct": true },
+        { "option": "10", "correct": false },
+        { "option": "18", "correct": false }
       ]
     },
     {
-      "id": 10,
-      "string": "Resuelve: 4 × 5 + 10",
+      "level": 10,
+      "question": "Resuelve: 4 × 5 + 10",
       "options": [
-        { "prompt": "30", "correct": true },
-        { "prompt": "50", "correct": false },
-        { "prompt": "40", "correct": false }
+        { "option": "30", "correct": true },
+        { "option": "50", "correct": false },
+        { "option": "40", "correct": false }
       ]
     }
   ]

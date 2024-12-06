@@ -7,103 +7,103 @@
   "dificulty": "Avanzado",
   "game": [
     {
-      "id": 1,
-      "string": "¿Cuánto es (10 + 2) × 3?",
+      "level": 1,
+      "question": "¿Cuánto es (10 + 2) × 3?",
       "options": [
-        { "prompt": "42", "correct": false },
-        { "prompt": "32", "correct": false },
-        { "prompt": "36", "correct": true },
-        { "prompt": "30", "correct": false }
+        { "option": "42", "correct": false },
+        { "option": "32", "correct": false },
+        { "option": "36", "correct": true },
+        { "option": "30", "correct": false }
       ]
     },
     {
-      "id": 2,
-      "string": "¿Cuál es el resultado de 45 ÷ (5 + 4)?",
+      "level": 2,
+      "question": "¿Cuál es el resultado de 45 ÷ (5 + 4)?",
       "options": [
-        { "prompt": "6", "correct": false },
-        { "prompt": "9", "correct": false },
-        { "prompt": "4", "correct": false },
-        { "prompt": "5", "correct": true }
+        { "option": "6", "correct": false },
+        { "option": "9", "correct": false },
+        { "option": "4", "correct": false },
+        { "option": "5", "correct": true }
       ]
     },
     {
-      "id": 3,
-      "string": "Resuelve: (8 × 3) - (4 + 2)",
+      "level": 3,
+      "question": "Resuelve: (8 × 3) - (4 + 2)",
       "options": [
-        { "prompt": "18", "correct": true },
-        { "prompt": "20", "correct": false },
-        { "prompt": "16", "correct": false },
-        { "prompt": "22", "correct": false }
+        { "option": "18", "correct": true },
+        { "option": "20", "correct": false },
+        { "option": "16", "correct": false },
+        { "option": "22", "correct": false }
       ]
     },
     {
-      "id": 4,
-      "string": "¿Cuál es el valor de 2³ + 3²?",
+      "level": 4,
+      "question": "¿Cuál es el valor de 2³ + 3²?",
       "options": [
-        { "prompt": "15", "correct": false },
-        { "prompt": "17", "correct": true },
-        { "prompt": "19", "correct": false },
-        { "prompt": "21", "correct": false }
+        { "option": "15", "correct": false },
+        { "option": "17", "correct": true },
+        { "option": "19", "correct": false },
+        { "option": "21", "correct": false }
       ]
     },
     {
-      "id": 5,
-      "string": "¿Cuánto es 64 ÷ 8 + 7?",
+      "level": 5,
+      "question": "¿Cuánto es 64 ÷ 8 + 7?",
       "options": [
-        { "prompt": "15", "correct": true },
-        { "prompt": "14", "correct": false },
-        { "prompt": "16", "correct": false },
-        { "prompt": "12", "correct": false }
+        { "option": "15", "correct": true },
+        { "option": "14", "correct": false },
+        { "option": "16", "correct": false },
+        { "option": "12", "correct": false }
       ]
     },
     {
-      "id": 6,
-      "string": "Resuelve: (7 × 7) - (4 × 4)",
+      "level": 6,
+      "question": "Resuelve: (7 × 7) - (4 × 4)",
       "options": [
-        { "prompt": "31", "correct": false },
-        { "prompt": "36", "correct": false },
-        { "prompt": "40", "correct": false },
-        { "prompt": "33", "correct": true }
+        { "option": "31", "correct": false },
+        { "option": "36", "correct": false },
+        { "option": "40", "correct": false },
+        { "option": "33", "correct": true }
       ]
     },
     {
-      "id": 7,
-      "string": "¿Cuál es el resultado de 100 ÷ (10 - 5)?",
+      "level": 7,
+      "question": "¿Cuál es el resultado de 100 ÷ (10 - 5)?",
       "options": [
-        { "prompt": "15", "correct": false },
-        { "prompt": "25", "correct": false },
-        { "prompt": "20", "correct": true },
-        { "prompt": "30", "correct": false }
+        { "option": "15", "correct": false },
+        { "option": "25", "correct": false },
+        { "option": "20", "correct": true },
+        { "option": "30", "correct": false }
       ]
     },
     {
-      "id": 8,
-      "string": "Resuelve: (15 + 5) × 2",
+      "level": 8,
+      "question": "Resuelve: (15 + 5) × 2",
       "options": [
-        { "prompt": "45", "correct": false },
-        { "prompt": "35", "correct": false },
-        { "prompt": "30", "correct": false },
-        { "prompt": "40", "correct": true }
+        { "option": "45", "correct": false },
+        { "option": "35", "correct": false },
+        { "option": "30", "correct": false },
+        { "option": "40", "correct": true }
       ]
     },
     {
-      "id": 9,
-      "string": "¿Cuánto es 18 ÷ 2 + (3 × 4)?",
+      "level": 9,
+      "question": "¿Cuánto es 18 ÷ 2 + (3 × 4)?",
       "options": [
-        { "prompt": "21", "correct": true },
-        { "prompt": "18", "correct": false },
-        { "prompt": "20", "correct": false },
-        { "prompt": "19", "correct": false }
+        { "option": "21", "correct": true },
+        { "option": "18", "correct": false },
+        { "option": "20", "correct": false },
+        { "option": "19", "correct": false }
       ]
     },
     {
-      "id": 10,
-      "string": "¿Cuál es el resultado de 50 - (7 × 6)?",
+      "level": 10,
+      "question": "¿Cuál es el resultado de 50 - (7 × 6)?",
       "options": [
-        { "prompt": "10", "correct": false },
-        { "prompt": "8", "correct": true },
-        { "prompt": "6", "correct": false },
-        { "prompt": "12", "correct": false }
+        { "option": "10", "correct": false },
+        { "option": "8", "correct": true },
+        { "option": "6", "correct": false },
+        { "option": "12", "correct": false }
       ]
     }
   ]

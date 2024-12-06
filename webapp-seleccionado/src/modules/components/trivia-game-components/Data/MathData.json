@@ -7,47 +7,47 @@
   "dificulty": "Intermedio",
   "game": [
     {
-      "id": 1,
-      "string": "¿Cuánto es 5 + 3?",
+      "level": 1,
+      "question": "¿Cuánto es 5 + 3?",
       "options": [
-        { "prompt": "8", "correct": true },
-        { "prompt": "7", "correct": false }
+        { "option": "8", "correct": true },
+        { "option": "7", "correct": false }
       ]
     },
     {
-      "id": 2,
-      "string": "¿Cuál es el resultado de 12 - 4?",
+      "level": 2,
+      "question": "¿Cuál es el resultado de 12 - 4?",
       "options": [
-        { "prompt": "8", "correct": true },
-        { "prompt": "6", "correct": false },
-        { "prompt": "10", "correct": false }
+        { "option": "8", "correct": true },
+        { "option": "6", "correct": false },
+        { "option": "10", "correct": false }
       ]
     },
     {
-      "id": 3,
-      "string": "Resuelve: 3 × 4",
+      "level": 3,
+      "question": "Resuelve: 3 × 4",
       "options": [
-        { "prompt": "12", "correct": true },
-        { "prompt": "15", "correct": false },
-        { "prompt": "10", "correct": false },
-        { "prompt": "9", "correct": false }
+        { "option": "12", "correct": true },
+        { "option": "15", "correct": false },
+        { "option": "10", "correct": false },
+        { "option": "9", "correct": false }
       ]
     },
     {
-      "id": 4,
-      "string": "¿Cuál es el cociente de 16 ÷ 2?",
+      "level": 4,
+      "question": "¿Cuál es el cociente de 16 ÷ 2?",
       "options": [
-        { "prompt": "8", "correct": true },
-        { "prompt": "7", "correct": false },
-        { "prompt": "6", "correct": false }
+        { "option": "8", "correct": true },
+        { "option": "7", "correct": false },
+        { "option": "6", "correct": false }
       ]
     },
     {
-      "id": 5,
-      "string": "¿Cuánto es 25 + 30 - 15?",
+      "level": 5,
+      "question": "¿Cuánto es 25 + 30 - 15?",
       "options": [
-        { "prompt": "45", "correct": true },
-        { "prompt": "40", "correct": false }
+        { "option": "45", "correct": true },
+        { "option": "40", "correct": false }
       ]
     }
   ]
