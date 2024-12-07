@@ -5,9 +5,8 @@ import { motion } from 'motion/react';
 import { Icon } from '../Icon/Icon.Component';
 
 const triviaGames = JSON.parse(localStorage.getItem('games'));
-console.log(triviaGames);
 
-export default function Categorias() {
+export default function TriviaGalery() {
   const [selectedCategory, setSelectedCategory] = useState('AllGames');
   const [showCategories, setShowCategories] = useState(false);
   const filteredGames =
@@ -19,23 +18,7 @@ export default function Categorias() {
     setShowCategories(prev => !prev);
   };
 
-  console.log('categoria seleccionada', selectedCategory);
   return (
-    // <div className='container mx-auto px-4 py-8'>
-    //   <div className='mb-8'>
-    //     <select
-    //       className=' text-black bg-white p-2 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500'
-    //       value={selectedCategory}
-    //       onChange={e => setSelectedCategory(e.target.value)}
-    //     >
-    //       <option value='AllGames'>Categorías</option>
-    //       {categories.map((c, idx) => (
-    //         <option key={idx} value={c.text}>
-    //           {c.text}
-    //         </option>
-    //       ))}
-    //     </select>
-    //   </div>
     <div>
       <button
         type='button'
@@ -108,7 +91,6 @@ export default function Categorias() {
           <CardGame key={idx} level={g} categories={categories}></CardGame>
         ))}
       </div>
-      {/* </div>  */}
     </div>
   );
 }

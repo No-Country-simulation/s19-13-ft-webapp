@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import {  AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { loadGameData } from './Data/LocalGameData.js';
 import QuestionCard from './QuestionCard.jsx';
 import ProgressBar from './ProgressBar.jsx';
 import GameSummary from './GameSummary.jsx';
+import { useParams } from 'react-router-dom';
 
 function TriviaGameLocal() {
   const [gameData, setGameData] = useState(null);
@@ -13,14 +14,16 @@ function TriviaGameLocal() {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [gameFinished, setGameFinished] = useState(false);
 
+  const { id } = useParams();
+
   useEffect(() => {
-    const savedData = loadGameData();
+    const savedData = loadGameData(id);
     if (savedData) {
       setGameData(savedData);
     }
-  }, []);
+  }, [id]);
 
-  const handleAnswer = (option) => {
+  const handleAnswer = option => {
     setSelectedAnswer(option);
     setIsAnswered(true);
     if (option.correct) {
@@ -48,15 +51,17 @@ function TriviaGameLocal() {
 
   if (!gameData) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">No hay juego disponible en el almacenamiento local</div>
+      <div className='min-h-screen flex items-center justify-center'>
+        <div className='text-xl'>
+          No hay juego disponible en el almacenamiento local
+        </div>
       </div>
     );
   }
 
   if (gameFinished) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className='min-h-screen bg-gray-100 flex items-center justify-center p-4'>
         <GameSummary
           correctAnswers={correctAnswers}
           totalQuestions={gameData.game.length}
@@ -68,14 +73,12 @@ function TriviaGameLocal() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4 pt-8">
-      <div className="w-full max-w-2xl mb-8">
-        <h1 className="text-3xl font-bold text-center text-black mb-2">
+    <div className='min-h-screen bg-gray-100 flex flex-col items-center p-4 pt-8'>
+      <div className='w-full max-w-2xl mb-8'>
+        <h1 className='text-3xl font-bold text-center text-black mb-2'>
           {gameData.title}
         </h1>
-        <p className="text-center text-gray-900 mb-6">
-          {gameData.description}
-        </p>
+        <p className='text-center text-gray-900 mb-6'>{gameData.description}</p>
       </div>
 
       <ProgressBar
@@ -84,7 +87,7 @@ function TriviaGameLocal() {
         correct={correctAnswers}
       />
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode='wait'>
         <QuestionCard
           key={currentQuestion}
           question={gameData.game[currentQuestion]}

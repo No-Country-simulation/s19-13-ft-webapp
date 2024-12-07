@@ -4,6 +4,7 @@ import Footer from './modules/components/footer/footer.jsx';
 import Home from './modules/pages/Home-page/Home.jsx';
 import Templates from './modules/pages/Plantillas/templates.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TriviaGameLocal from './modules/components/trivia-game-components/TriviaGameLocal.jsx';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
             path='/crear-juego'
             element={<CreationsElements></CreationsElements>}
           ></Route>
-
+          <Route
+            path='/play-game/:id'
+            element={<TriviaGameLocal></TriviaGameLocal>}
+          ></Route>
           <Route path='/Plantillas' element={<Templates></Templates>}></Route>
         </Routes>
         <Footer></Footer>

@@ -1,4 +1,4 @@
-export const saveGameData = (gameData) => {
+export const saveGameData = gameData => {
   try {
     localStorage.setItem('triviaGameData', JSON.stringify(gameData));
     return true;
@@ -8,10 +8,14 @@ export const saveGameData = (gameData) => {
   }
 };
 
-export const loadGameData = () => {
+export const loadGameData = id => {
   try {
-    const data = localStorage.getItem('triviaGameData');
-    return data ? JSON.parse(data) : null;
+    const data = localStorage.getItem('games');
+    const parsedData = JSON.parse(data);
+    console.log('arreglo para buscar el game', parsedData);
+    const findedGame = parsedData.find(g => g.id == id);
+    console.log(findedGame);
+    return findedGame;
   } catch (error) {
     console.error('Error cargando los archivos del juego:', error);
     return null;

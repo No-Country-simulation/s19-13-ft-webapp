@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const CardGame = ({ level, categories }) => {
   const categoryInfo = categories.find(c => c.text === level.category);
   return (
-    <Link to={`/play-game-${level.id}`}>
+    <Link to={`/play-game/${level.id}`}>
       <div className='bg-slate-200 w-fit rounded-md group overflow-hidden hover:scale-110 hover:cursor-pointer transition-scale duration-200 '>
         <div className='relative'>
           <p className='absolute inset-0 text-white p-2 bg-black/70 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
