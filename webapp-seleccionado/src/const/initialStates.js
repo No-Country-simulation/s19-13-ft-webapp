@@ -10,10 +10,10 @@ export const INITIAL_DIFICULTY = {
 
 export const INITIAL_NIVEL = {
   level: 0,
-  string: '',
+  question: '',
   options: [
     {
-      prompt: '',
+      option: '',
       correct: false,
     },
   ],

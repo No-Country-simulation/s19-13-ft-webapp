@@ -1,4 +1,5 @@
 import { Icon } from '../../../../components/Icon/Icon.Component';
+
 const PreviewStatic = ({ l, handleEditLevelId }) => {
   return (
     <div className='w-full min-h-52 p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-blueSecondary mb-2'>
@@ -6,14 +7,14 @@ const PreviewStatic = ({ l, handleEditLevelId }) => {
         <label>{`Nivel ${l.level}`}</label>
         <button
           onClick={() => {
-            handleEditLevelId(l.id);
+            handleEditLevelId(l.level);
           }}
         >
-          <Icon icon='edit'></Icon>
+          <Icon icon='edit' size={35}></Icon>
         </button>
       </div>
       <h3 className='border-black border-2 border-dashed w-full py-2 flex justify-center'>
-        {l.string}
+        {l.question}
       </h3>
       <div className='my-2 w-full grid grid-cols-2 gap-2 '>
         {l.options.map((opt, idx) => {
@@ -30,7 +31,7 @@ const PreviewStatic = ({ l, handleEditLevelId }) => {
                 checked={opt.correct}
                 readOnly
               />
-              <p>{opt.prompt}</p>
+              <p>{opt.option}</p>
             </div>
           );
         })}

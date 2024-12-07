@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import TransitionsPanel from './TransitionsPanel.Component.jsx';
 import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context.jsx';
 import { Icon } from '../../../../components/Icon/Icon.Component.jsx';
+import { motion } from 'motion/react';
 
 const PanelCreatorComponent = () => {
   const { handleFinalForm } = useContext(CreatorElementsContext);
@@ -27,7 +28,7 @@ const PanelCreatorComponent = () => {
         <StringCreatorComponent></StringCreatorComponent>
         <div className='relative w-full'>
           <button
-            className={`flex gap-2 justify-center items-center  w-full h-16 text-lg ${
+            className={`flex gap-2 justify-center items-center  w-full h-16 text-lg   hover:text-slate-200 hover:bg-blueSecondary ${
               showPanel.optionsPanel
                 ? ' bg-blueSecondary text-white'
                 : ' text-blueSecondary  bg-white'
@@ -49,7 +50,18 @@ const PanelCreatorComponent = () => {
             )}
           </button>
           {showPanel.optionsPanel && (
-            <div className='absolute w-full p-2 bg-blueSecondary'>
+            <motion.div
+              initial='hidden'
+              animate='visible'
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 }, // Establece el retardo entre cada hijo
+                },
+              }}
+              className='absolute w-full p-2 bg-blueSecondary'
+            >
               {[2, 3, 4].map((n, i) => (
                 <OptionsCreatorComponents
                   options={n}
@@ -59,7 +71,7 @@ const PanelCreatorComponent = () => {
                   {' '}
                 </OptionsCreatorComponents>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
         <button
@@ -67,7 +79,7 @@ const PanelCreatorComponent = () => {
             showPanel.transitionsPanel
               ? 'text-white  bg-blueSecondary'
               : 'text-blueSecondary  bg-white'
-          } flex gap-2 justify-center items-center  w-full h-16 text-lg`}
+          } flex gap-2 justify-center items-center  w-full h-16 text-lg   hover:text-slate-200 hover:bg-blueSecondary `}
           onClick={() => handleShowPanel('transitionsPanel')}
         >
           {showPanel.transitionsPanel ? (
@@ -83,11 +95,19 @@ const PanelCreatorComponent = () => {
           )}
         </button>
         {showPanel.transitionsPanel && <TransitionsPanel></TransitionsPanel>}
+        <button
+          onClick={() => {
+            handleFinalForm('AI');
+          }}
+          className='flex gap-2 justify-center items-center  w-full h-16 text-lg text-blueSecondary  bg-white   hover:text-slate-200 hover:bg-blueSecondary '
+        >
+          Generar juego con IA
+        </button>
       </div>
       <button
         className='text-white bg-blueSecondary rounded-full w-32 h-16 text-lg'
         onClick={() => {
-          handleFinalForm();
+          handleFinalForm('Final');
         }}
       >
         Finalizar

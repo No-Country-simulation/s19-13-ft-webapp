@@ -31,7 +31,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
     setLevel(prev => {
       const updatedOptions = [...prev.options];
       while (updatedOptions.length <= index) {
-        updatedOptions.push({ prompt: '', correct: false });
+        updatedOptions.push({ option: '', correct: false });
       }
       while (updatedOptions.length > selectedDificulty.numberOptions) {
         updatedOptions.pop();
@@ -59,12 +59,12 @@ const CreatorComponent = ({ handleAddLevel }) => {
   //funcion para el sumbit del nivel
 
   const handlePreview = () => {
-    const { string, options } = level;
+    const { question, options } = level;
     const validOptionCorrect = options.some(o => o.correct);
     const validPrompt = options.every(
-      o => typeof o.prompt === 'string' && o.prompt.trim() !== ''
+      o => typeof o.option === 'string' && o.option.trim() !== ''
     );
-    if (string.trim() === '') {
+    if (question.trim() === '') {
       setError('Debes agregar una consigna valida');
     } else if (!validPrompt) {
       setError('Las opciones tienen que tener valores validos');
@@ -87,7 +87,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
       setError(null);
       setLevel(prev => {
         const newOptions = prev.options.map((_, index) => {
-          handleLevelOptions(index, 'prompt', ''); // Resetear el prompt
+          handleLevelOptions(index, 'option', ''); // Resetear el prompt
           handleLevelOptions(index, 'correct', false); // Resetear el correct
         });
         return { ...prev, newOptions };
@@ -101,7 +101,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
   };
 
   return (
-    <div className='w-[95%] shadow-lg min-h-52 p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-black'>
+    <div className='w-[95%] shadow-lg min-h-[240px] p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-slate-400'>
       {selectedCreator.textSelected === true && (
         <LevelDescription
           level={level}
@@ -122,7 +122,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
       </div>
       <div>
         <button
-          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
+          className='mx-2 bg-blueSecondary text-white hover:bg-blueButton hover:text-black font-semibold p-2 rounded-lg transition duration-200 ease-in-out'
           onClick={() => {
             handleReset('softReset');
           }}
@@ -130,7 +130,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
           Quitar opciones
         </button>
         <button
-          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
+          className='mx-2 bg-blueSecondary text-white hover:bg-blueButton hover:text-black font-semibold p-2 rounded-lg transition duration-200 ease-in-out'
           onClick={() => {
             handleReset();
           }}
@@ -138,7 +138,7 @@ const CreatorComponent = ({ handleAddLevel }) => {
           Reset
         </button>
         <button
-          className='mx-2 bg-blueButton font-semibold p-2 rounded-lg'
+          className='mx-2 bg-blueSecondary text-white hover:bg-blueButton hover:text-black font-semibold p-2 rounded-lg transition duration-200 ease-in-out'
           onClick={() => handlePreview()}
         >
           Agregar historia

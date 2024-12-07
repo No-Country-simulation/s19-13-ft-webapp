@@ -1,5 +1,6 @@
 import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context.jsx';
 import { useContext } from 'react';
+import { motion } from 'motion/react';
 const OptionsCreatorComponents = ({ options, handleShowPanel }) => {
   const { selectedCreator, handleSelectedCreator, handleSelectedDificulty } =
     useContext(CreatorElementsContext);
@@ -20,7 +21,12 @@ const OptionsCreatorComponents = ({ options, handleShowPanel }) => {
   }
 
   return (
-    <>
+    <motion.div
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+    >
       <h3 className='px-4 text-slate-200 font-semibold'>{`${dificulty}:`}</h3>
       <div className='flex flex-col  w-full pb-2 px-4'>
         {Array.from({ length: options }).map((_, i) => (
@@ -41,7 +47,7 @@ const OptionsCreatorComponents = ({ options, handleShowPanel }) => {
           </button>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

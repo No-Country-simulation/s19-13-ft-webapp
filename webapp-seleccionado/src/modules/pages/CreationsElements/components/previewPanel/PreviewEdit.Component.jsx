@@ -10,9 +10,9 @@ const PreviewEdit = ({
     <div className='w-full min-h-52 p-2 bg-white rounded-md flex flex-col justify-between items-center border-2 border-blueSecondary mb-2'>
       <div className='flex justify-between w-full px-4 py-1'>
         <label>{`Nivel ${l.level}`}</label>
-        <div>
+        <div className='gap-2 flex'>
           <button onClick={() => saveLevelChanges()}>
-            <Icon icon='edit'></Icon>
+            <Icon icon='ok'></Icon>
           </button>
           <button onClick={() => handleDeleteLevel(l.level)}>
             <Icon icon='delete'></Icon>
@@ -21,10 +21,10 @@ const PreviewEdit = ({
       </div>
       <div className='border-black border-2 border-dashed w-full py-2 flex justify-center'>
         <input
-          value={l.string}
+          value={l.question}
           className='text-center w-2/3 focus:outline-none border-2 border-slate-200'
-          onChange={e => handleEditLevel(l.level, 'string', e.target.value)}
-          placeholder={l.string}
+          onChange={e => handleEditLevel(l.level, 'question', e.target.value)}
+          placeholder={l.question}
         ></input>
       </div>
       <div className='my-2 w-full grid grid-cols-2 gap-2 '>
@@ -40,21 +40,20 @@ const PreviewEdit = ({
                 type='checkbox'
                 className='w-8 h-8 scale-120'
                 checked={opt.correct}
-                onClick={e => {
+                onChange={e => {
                   handleEditLevelOption(
                     l.level,
                     idx,
                     'correct',
-                    e.target.value
+                    e.target.checked
                   );
                 }}
               />
               <input
-                value={opt.prompt}
+                value={opt.option}
                 onChange={e =>
-                  handleEditLevelOption(l.level, idx, 'prompt', e.target.value)
+                  handleEditLevelOption(l.level, idx, 'option', e.target.value)
                 }
-                placeholder={l.string}
               ></input>
             </div>
           );
