@@ -4,24 +4,20 @@ import {
   INITIAL_DIFICULTY,
   INITIAL_GAME,
 } from '../const/initialStates.js';
+import generateGame from '../utils/cohere.js';
 
 const CreatorElementsContext = createContext();
 
 const CreatorElementProvider = ({ children }) => {
-  //Estado general del juego
   const [game, setGame] = useState(INITIAL_GAME);
 
-  //Selector de opciones
   const [selectedCreator, setSelectedCreator] = useState(INITIAL_CREATOR);
 
   const [selectedDificulty, setSelectedDificulty] = useState(INITIAL_DIFICULTY);
 
   const [previewGame, setPreviewGame] = useState([]);
 
-  const [showFinalForm, setShowFinalForm] = useState({
-    finalForm: false,
-    error: false,
-  });
+  const [visibleForm, setVisibleForm] = useState(null);
 
   const savedGames = newGame => {
     const games = JSON.parse(localStorage.getItem('games')) || [];
@@ -32,23 +28,53 @@ const CreatorElementProvider = ({ children }) => {
     localStorage.setItem('games', JSON.stringify(updatedGames));
   };
 
-  const createFinalGame = level => {
-    const finalGame = { ...level, game: previewGame };
+  const createFinalGame = (level, gameAI) => {
+    const finalGame = { ...level, game: gameAI ? gameAI : previewGame };
     savedGames(finalGame);
     setSelectedCreator(INITIAL_CREATOR);
     setSelectedDificulty(INITIAL_DIFICULTY);
     setGame(INITIAL_GAME);
     setPreviewGame([]);
-    setShowFinalForm({ finalForm: false });
+    setVisibleForm(null);
   };
 
-  const handleFinalForm = () => {
-    if (previewGame.length === 0) {
-      setShowFinalForm({ finalForm: false, error: true });
-      return;
+  const createPreviewGameWithAI = async () => {
+    const userPreferences = {
+      title: game.title,
+      category: game.category,
+      autor: game.autor,
+      description: game.description,
+      dificulty: game.dificulty,
+    };
+
+    try {
+      const gameGeneratedWithAI = await generateGame(userPreferences);
+
+      if (gameGeneratedWithAI && gameGeneratedWithAI.length > 0) {
+        createFinalGame(userPreferences, gameGeneratedWithAI);
+      } else {
+        console.warn('No se generó ningún juego.');
+      }
+    } catch (error) {
+      console.log(error);
     }
-    setShowFinalForm({ finalForm: true, error: false });
-    return;
+  };
+
+  const handleFinalForm = value => {
+    switch (value) {
+      case 'Final': {
+        setVisibleForm('Final');
+        return;
+      }
+      case 'AI': {
+        setVisibleForm('AI');
+        return;
+      }
+      case 'default': {
+        setVisibleForm(null);
+        return;
+      }
+    }
   };
 
   const handleSelectedDificulty = param => {
@@ -63,7 +89,10 @@ const CreatorElementProvider = ({ children }) => {
     setGame(prev => ({ ...prev, ...param }));
   };
 
-  // console.log('contexto', game);
+  const handleSetFinalForm = state => {
+    setVisibleForm(state);
+  };
+
   return (
     <CreatorElementsContext.Provider
       value={{
@@ -75,9 +104,11 @@ const CreatorElementProvider = ({ children }) => {
         game,
         previewGame,
         setPreviewGame,
-        showFinalForm,
         handleFinalForm,
         createFinalGame,
+        visibleForm,
+        handleSetFinalForm,
+        createPreviewGameWithAI,
       }}
     >
       {children}

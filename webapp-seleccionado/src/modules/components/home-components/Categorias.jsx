@@ -1,135 +1,114 @@
-import  { useState } from "react"
+import { useState } from 'react';
+import { categories } from '../../../mock/exampleCategory';
+import CardGame from './CardGame';
+import { motion } from 'motion/react';
+import { Icon } from '../Icon/Icon.Component';
 
-const triviaCategories = [
-  {
-    id: 1,
-    title: "Animales invertebrados",
-    image: "https://www.shutterstock.com/image-vector/classification-invertebrates-animals-insect-arachnids-600nw-2247258627.jpg",
-    rating: 3.2,
-    category: "ciencias_naturales",
-    author: "Martina Cruz"
-  },
-  {
-    id: 2,
-    title: "Edad media",
-    image: "https://s1.elespanol.com/2023/09/29/historia/798180348_236402035_1024x576.jpg",
-    rating: 4.5,
-    category: "ciencias_sociales",
-    author: "Alberto Sanchez"
-  },
-  {
-    id: 3,
-    title: "Verbos irregulares",
-    image: "https://s1.significados.com/foto/ejemplos-de-verbos-og.jpg",
-    rating: 5.0,
-    category: "idiomas",
-    author: "Roberto Smith"
-  },
-  {
-    id: 4,
-    title: "Reptiles",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Extant_reptilia.jpg/800px-Extant_reptilia.jpg",
-    rating: 3.5,
-    category: "ciencias_naturales",
-    author: "Marcela Gomez"
-  },
-  {
-    id: 5,
-    title: "Gramatica italiana B1",
-    image: "https://thumbs.dreamstime.com/z/libro-de-gram%C3%A1tica-italiana-y-varios-manuales-para-aprender-italiano-en-una-estanter%C3%ADa-pula-croatia-febrero-libros-referencia-175609210.jpg",
-    rating: 4.2,
-    category: "idiomas",
-    author: "Isabella Ricci"
-  },
-  {
-    id: 6,
-    title: "Literatura clásica",
-    image: "https://cards.algoreducation.com/_next/image?url=https%3A%2F%2Ffiles.algoreducation.com%2Fproduction-ts%2F__S3__fd8d8e3b-7daf-44c9-81d0-dfd1a4a22712&w=3840&q=75",
-    rating: 4.6,
-    category: "arte_y_literatura",
-    author: "Martina Cruz"
-  },
-  {
-    id: 7,
-    title: "Ejercicios matemáticos",
-    image: "https://aeac.science/wp-content/uploads/2020/06/matematicas.jpg",
-    rating: 3.8,
-    category: "ciencias_formales",
-    author: "Cecilia Ortiz"
-  },
-  {
-    id: 8,
-    title: "Capitales de Europa",
-    image: "https://www.paises.net/wp-content/uploads/2022/10/mapa-capitales-europa-1024x835.jpg",
-    rating: 5.0,
-    category: "ciencias_sociales",
-    author: "Martina Cruz"
-  },
-]
+const triviaGames = JSON.parse(localStorage.getItem('games'));
+console.log(triviaGames);
 
 export default function Categorias() {
-  const [selectedCategory, setSelectedCategory] = useState("todos")
+  const [selectedCategory, setSelectedCategory] = useState('AllGames');
+  const [showCategories, setShowCategories] = useState(false);
+  const filteredGames =
+    selectedCategory === 'AllGames'
+      ? triviaGames
+      : triviaGames.filter(g => g.category === selectedCategory.text);
 
-  const filteredCategories = selectedCategory === "todos"
-    ? triviaCategories
-    : triviaCategories.filter(category => category.category === selectedCategory)
+  const handleShowCategories = () => {
+    setShowCategories(prev => !prev);
+  };
 
-  const renderStars = (rating) => {
-    const fullStars = Math.floor(rating);
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < fullStars) {
-        stars.push(<span key={i} className="text-yellow-400">★</span>);
-      } else {
-        stars.push(<span key={i} className="text-gray-300">★</span>);
-      }
-    }
-    return stars;
-  }
-
+  console.log('categoria seleccionada', selectedCategory);
   return (
-    <div className="container mx-auto px-4 py-8">
-      
+    // <div className='container mx-auto px-4 py-8'>
+    //   <div className='mb-8'>
+    //     <select
+    //       className=' text-black bg-white p-2 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500'
+    //       value={selectedCategory}
+    //       onChange={e => setSelectedCategory(e.target.value)}
+    //     >
+    //       <option value='AllGames'>Categorías</option>
+    //       {categories.map((c, idx) => (
+    //         <option key={idx} value={c.text}>
+    //           {c.text}
+    //         </option>
+    //       ))}
+    //     </select>
+    //   </div>
+    <div>
+      <button
+        type='button'
+        onClick={() => handleShowCategories()}
+        className={`flex justify-between py-1 px-2 rounded-md my-4 border-slate-400 border-2 relative w-1/3 ${
+          showCategories ? 'bg-blueSecondary' : 'bg-white'
+        }`}
+      >
+        <div className='flex items-center gap-1'>
+          {selectedCategory !== 'AllGames' && (
+            <Icon icon={selectedCategory.svg} size={20}></Icon>
+          )}
+          <p className={`${showCategories ? 'text-white' : 'text-black'}`}>
+            {selectedCategory !== 'AllGames'
+              ? selectedCategory.text
+              : 'Ver todas las categorías'}
+          </p>
+        </div>
+        {showCategories ? (
+          <Icon icon='arrow-down'></Icon>
+        ) : (
+          <Icon icon='arrow-up'></Icon>
+        )}
+        {showCategories ? (
+          <motion.div
+            initial='hidden'
+            animate='visible'
+            className='absolute z-30 top-full left-0 bg-white border-b-black border-x-black border-2 w-full'
+            variants={{
+              hidden: { height: 0 },
+              visible: {
+                height: 'auto',
+                transition: {
+                  staggerChildren: 0.1,
+                  when: 'beforeChildren',
+                },
+              },
+            }}
+          >
+            <motion.div
+              onClick={() => setSelectedCategory('AllGames')}
+              className='flex items-center p-1 w-full hover:bg-blueSecondary hover:text-white'
+              variants={{
+                hidden: { opacity: 0, x: -100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              Todos los juegos
+            </motion.div>
+            {categories.map((c, idx) => (
+              <motion.div
+                key={idx}
+                onClick={() => setSelectedCategory(c)}
+                className='flex items-center p-1 w-full hover:bg-blueSecondary hover:text-white'
+                variants={{
+                  hidden: { opacity: 0, x: -100 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
+                <Icon icon={c.svg} size={20}></Icon>
+                <p className='ms-2'>{c.text}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : null}
+      </button>
 
-      <div className="mb-8">
-        <select
-          className=" text-gray-700 bg-transparent rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="todos">categorías</option>
-          <option value="ciencias_naturales">Ciencias naturales</option>
-          <option value="ciencias_sociales">Ciencias sociales</option>
-          <option value="idiomas">Idiomas</option>
-          <option value="arte_y_literatura">Arte y literatura</option>
-          <option value="ciencias_formales">Ciencias formales</option>
-        </select>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {filteredCategories.map((category) => (
-          <div key={category.id} className="rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="aspect-w-4 aspect-h-3">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="font-semibold mb-2">{category.title}</h3>
-              <p className="text-sm text-gray-600 mb-2">{category.author}</p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  {renderStars(category.rating)}
-                </div>
-                <span className="text-sm font-medium">{category.rating.toFixed(1)}</span>
-              </div>
-            </div>
-          </div>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        {filteredGames.map((g, idx) => (
+          <CardGame key={idx} level={g} categories={categories}></CardGame>
         ))}
       </div>
+      {/* </div>  */}
     </div>
-  )
+  );
 }
-

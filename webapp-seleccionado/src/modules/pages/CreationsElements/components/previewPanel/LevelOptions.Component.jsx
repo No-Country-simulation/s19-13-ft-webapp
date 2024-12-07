@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 const LevelOptions = ({
   options,
   numberOptions,
@@ -6,12 +8,16 @@ const LevelOptions = ({
 }) => {
   if (!options || options.length === 0) return null;
   return (
-    <div className='my-2 w-full grid grid-cols-2 gap-2 '>
+    <motion.div
+      initial={{ x: -100, scale: 0.5, opacity: 0.5 }}
+      animate={{ x: 0, scale: 1, opacity: 1 }}
+      className='my-2 w-full grid grid-cols-2 gap-2 '
+    >
       {Array.from({ length: numberOptions }).map((_, i) => (
         <div
           key={i}
           className={`flex items-center gap-4 p-2 ${
-            inputSelected === i ? 'border-green-500' : 'border-red-500'
+            inputSelected === i ? 'border-green-400' : 'border-red-400'
           }  border-2`}
         >
           <input
@@ -23,11 +29,11 @@ const LevelOptions = ({
           <input
             className='focus:outline-slate-400 h-8 w-full'
             type='text'
-            onChange={e => handleLevelOptions(i, 'prompt', e.target.value)}
+            onChange={e => handleLevelOptions(i, 'option', e.target.value)}
           />
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 export default LevelOptions;

@@ -3,11 +3,11 @@ import { useState, useContext } from 'react';
 import PreviewStatic from './PreviewStatic.Component';
 import PreviewEdit from './PreviewEdit.Component';
 import { CreatorElementsContext } from '../../../../../context/CreatorElements.Context';
+import { motion } from 'motion/react';
 
 const PreviewCreatorComponent = () => {
   const { previewGame, setPreviewGame } = useContext(CreatorElementsContext);
   const [editLevelId, setEditLevelId] = useState(null);
-
   const handleAddLevel = level => {
     setPreviewGame(prev => [...prev, { ...level, level: prev.length + 1 }]);
   };
@@ -21,7 +21,7 @@ const PreviewCreatorComponent = () => {
   const handleEditLevelOption = (levelId, optionIndex, key, value) => {
     setPreviewGame(prev =>
       prev.map(level => {
-        if (level.id === levelId) {
+        if (level.level === levelId) {
           const updatedOptions = [...level.options];
           updatedOptions[optionIndex] = {
             ...updatedOptions[optionIndex],
@@ -68,10 +68,10 @@ const PreviewCreatorComponent = () => {
       )}
       <div className='max-h-96 overflow-y-auto w-[95%]'>
         {previewGame.length > 0 &&
-          previewGame.map(l => {
-            const isEditing = editLevelId === l.id;
+          previewGame.map((l, idx) => {
+            const isEditing = editLevelId === l.level;
             return (
-              <div key={l.id}>
+              <motion.div key={idx} initial={{ y: -50 }} animate={{ y: 0 }}>
                 {!isEditing ? (
                   <PreviewStatic
                     l={l}
@@ -86,7 +86,7 @@ const PreviewCreatorComponent = () => {
                     handleDeleteLevel={handleDeleteLevel}
                   ></PreviewEdit>
                 )}
-              </div>
+              </motion.div>
             );
           })}
       </div>
