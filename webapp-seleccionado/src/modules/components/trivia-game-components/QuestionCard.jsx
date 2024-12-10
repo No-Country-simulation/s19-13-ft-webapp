@@ -5,7 +5,7 @@ function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer, transiti
   return (
     <AnimatedContainer 
       transitionType={transitionType}
-      className=" bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full"
+      className=" bg-white p-6 rounded-sm shadow-lg max-w-2xl w-full"
     >
       <h2 className="text-xl font-semibold mb-4 text-black">{question.question}</h2>
       <div className="grid grid-rows-2 grid-cols-2 gap-3">
@@ -13,12 +13,12 @@ function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer, transiti
           <button
             key={index}
             onClick={() => !isAnswered && onAnswer(optionItem)}
-            className={`w-full h-full p-3 text-left rounded-lg transition-colors ${
+            className={`w-full h-full p-3 text-left rounded-lg transition-colors border-gray-500 transition-colors hover:scale-105 hover:transition  duration-500 ${
               isAnswered
                 ? optionItem.correct
-                  ? 'bg-green-100 border-green-500'
+                  ? 'bg-green-200 border-green-500'
                   : selectedAnswer === optionItem
-                  ? 'bg-red-100 border-red-500'
+                  ? 'bg-red-200 border-red-500'
                   : 'bg-gray-100'
                 : 'hover:bg-blue-50 bg-gray-50'
             } border ${
