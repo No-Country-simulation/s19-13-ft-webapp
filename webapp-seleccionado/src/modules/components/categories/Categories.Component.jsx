@@ -52,8 +52,7 @@ const Categories = () => {
             }}
           >
             {categories.map((c, idx) => (
-              <motion.button
-                type='button'
+              <motion.div
                 key={idx}
                 onClick={() => handleSetGame({ category: c.text })}
                 className='flex items-center p-1 w-full hover:bg-blueSecondary hover:text-white'
@@ -64,7 +63,7 @@ const Categories = () => {
               >
                 <Icon icon={c.svg} size={20}></Icon>
                 <p className='ms-2'>{c.text}</p>
-              </motion.button>
+              </motion.div>
             ))}
           </motion.div>
         ) : null}

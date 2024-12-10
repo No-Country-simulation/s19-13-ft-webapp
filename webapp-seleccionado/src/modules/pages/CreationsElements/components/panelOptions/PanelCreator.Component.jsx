@@ -57,44 +57,48 @@ const PanelCreatorComponent = () => {
                 hidden: { opacity: 0 },
                 visible: {
                   opacity: 1,
-                  transition: { staggerChildren: 0.2 }, // Establece el retardo entre cada hijo
+                  transition: { staggerChildren: 0.2 },
                 },
               }}
-              className='absolute w-full p-2 bg-blueSecondary'
+              className='absolute w-full p-2 bg-blueSecondary z-50'
             >
               {[2, 3, 4].map((n, i) => (
                 <OptionsCreatorComponents
                   options={n}
                   key={i}
                   handleShowPanel={handleShowPanel}
-                >
-                  {' '}
-                </OptionsCreatorComponents>
+                ></OptionsCreatorComponents>
               ))}
             </motion.div>
           )}
         </div>
-        <button
-          className={`${
-            showPanel.transitionsPanel
-              ? 'text-white  bg-blueSecondary'
-              : 'text-blueSecondary  bg-white'
-          } flex gap-2 justify-center items-center  w-full h-16 text-lg   hover:text-slate-200 hover:bg-blueSecondary `}
-          onClick={() => handleShowPanel('transitionsPanel')}
-        >
-          {showPanel.transitionsPanel ? (
-            <Icon icon='settings-selected'></Icon>
-          ) : (
-            <Icon icon='settings'></Icon>
+        <div className='relative w-full z-0'>
+          <button
+            className={`${
+              showPanel.transitionsPanel
+                ? 'text-white  bg-blueSecondary'
+                : 'text-blueSecondary  bg-white'
+            } flex gap-2 justify-center  items-center w-full h-16 text-lg  hover:text-slate-200 hover:bg-blueSecondary `}
+            onClick={() => handleShowPanel('transitionsPanel')}
+          >
+            {showPanel.transitionsPanel ? (
+              <Icon icon='settings-selected'></Icon>
+            ) : (
+              <Icon icon='settings'></Icon>
+            )}
+            Configuración
+            {showPanel.transitionsPanel ? (
+              <Icon icon='arrow-down'></Icon>
+            ) : (
+              <Icon icon='arrow-up'></Icon>
+            )}
+          </button>
+          {showPanel.transitionsPanel && (
+            <TransitionsPanel
+              handleShowPanel={handleShowPanel}
+            ></TransitionsPanel>
           )}
-          Configuración
-          {showPanel.transitionsPanel ? (
-            <Icon icon='arrow-down'></Icon>
-          ) : (
-            <Icon icon='arrow-up'></Icon>
-          )}
-        </button>
-        {showPanel.transitionsPanel && <TransitionsPanel></TransitionsPanel>}
+        </div>
         <button
           onClick={() => {
             handleFinalForm('AI');

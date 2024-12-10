@@ -25,7 +25,7 @@ export const INITIAL_GAME = {
   category: '',
   autor: '',
   description: '',
-  // transitions: '',
+  transitions: '',
   dificulty: '',
   game: [],
 };

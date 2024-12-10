@@ -29,7 +29,9 @@ const FinalForm = ({ typeForm }) => {
   const handleForm = () => {
     const newErrors = Object.fromEntries(
       Object.entries(game)
-        .filter(([key]) => key !== 'game' && key !== 'id')
+        .filter(
+          ([key]) => key !== 'game' && key !== 'id' && key !== 'transitions'
+        )
         .map(([key, value]) => [key, value.trim() === ''])
     );
     setErrors(newErrors);
