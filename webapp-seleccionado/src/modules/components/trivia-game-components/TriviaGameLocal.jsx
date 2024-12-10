@@ -73,9 +73,9 @@ function TriviaGameLocal() {
   }
 
   return (
-    <div className='min-h-screen bg-gray-100 flex flex-col items-center p-4 pt-8'>
+    <div className='min-h-screen bg-custom-l flex flex-col items-center p-4 pt-8'>
       <div className='w-full max-w-2xl mb-8'>
-        <h1 className='text-3xl font-bold text-center text-black mb-2'>
+        <h1 className='text-3xl font-bold text-center font-Pangolin text-black mb-2'>
           {gameData.title}
         </h1>
         <p className='text-center text-gray-900 mb-6'>{gameData.description}</p>
