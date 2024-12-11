@@ -5,6 +5,7 @@ import Home from './modules/pages/Home-page/Home.jsx';
 import Templates from './modules/pages/Plantillas/templates.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TriviaGameLocal from './modules/components/trivia-game-components/TriviaGameLocal.jsx';
+import SudokuGenerator from './modules/pages/Sudoku/Sudoku.jsx';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route
             path='/play-game/:id'
             element={<TriviaGameLocal></TriviaGameLocal>}
+          ></Route>
+          <Route
+            path='/Sudoku'
+            element={<SudokuGenerator></SudokuGenerator>}
           ></Route>
           <Route path='/Plantillas' element={<Templates></Templates>}></Route>
         </Routes>
