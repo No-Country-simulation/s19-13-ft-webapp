@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className=' bg-white my-10 h-20'>
+    <header className=' bg-white my-10 h-20 w-full'>
       <div className='flex  items-center justify-between px-4 max-w-7xl mx-auto'>
         <a href='/' className='flex items-center gap-2 text-black no-underline'>
           <img src={LogoPlayChess} alt='Logo' />
