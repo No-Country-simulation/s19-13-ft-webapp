@@ -129,7 +129,7 @@ const Home = () => {
 
       <div className=' flex flex-col p-8'>
         <h1 className='text-center text-4xl  text-white font-Roboto mb-10'>
-          ¿Porque usar Nombre?
+          ¿Porque usar PlayClass?
         </h1>
 
         <section className='flex flex-col w-full font-Roboto'>

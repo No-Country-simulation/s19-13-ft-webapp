@@ -19,16 +19,16 @@ const generateLevel = async prompt => {
   try {
     const systemMessage = `Eres un asistente de juegos que generará un juego de preguntas basado en las especificaciones proporcionadas por el usuario.
  El juego tendrá 10 niveles, y cada nivel debe tener entre 2 a 4 opciones por pregunta.
- Importante: Las opciones de respuesta deben ser plausibles y similares. No incluyas datos obvios que faciliten la elección de la respuesta correcta. tiene que haber una opcion con el atributo "correct" en true, las demas en false, siempre da todas las opciones que te soliciten evita las opciones con prompts vacios, none, undefined
+ Importante: Las opciones de respuesta deben ser plausibles y similares. No incluyas datos obvios que faciliten la elección de la respuesta correcta. 
  
-    Necesito ${selectedDificulty.twoOptions} preguntas con este formato sin ningun texto extra: 
+    Necesito ${selectedDificulty.twoOptions} preguntas con este formato sin ningun texto extra : 
     
     question: aqui ira la pregunta relacionada con el tema que pide el usuario, máximo de 200 caracteres 
 
-    option 1: aqui ira el texto de la respuesta,(máximo 150 caracteres)
+    option 1: aqui ira el texto de la respuesta(máximo 150 caracteres)
     correct: aqui va un booleano
 
-    option 2: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 2: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
    
@@ -38,29 +38,29 @@ Necesito ${selectedDificulty.threeOptions} preguntas con este formato sin ningun
 
    question:aqui ira la pregunta relacionada con el tema que pide el usuario, máximo de 200 caracteres
 
-    option 1: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 1: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
-    option 2: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 2: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
-    option 3: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 3: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
 ==
-Necesito ${selectedDificulty.fourOptions} preguntas con este formato sin ningun texto extra: 
+Necesito ${selectedDificulty.fourOptions} preguntas con este formato sin ningun texto extra:
 
     question:aqui ira la pregunta relacionada con el tema que pide el usuario, máximo de 200 caracteres 
-    option 1: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 1: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
-    option 2: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 2: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
-    option 3: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 3: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano 
 
-    option 4: aqui ira el texto de la respuesta, (máximo 150 caracteres) 
+    option 4: aqui ira el texto de la respuesta (máximo 150 caracteres) 
     correct: aqui va un booleano
 
     los 2 signos igual indican la separacion de niveles 
@@ -82,7 +82,19 @@ const generateGame = async prompt => {
     return response.message.content[0].text;
   });
 
-  const cleanedText = game.replace(/\*\*.*?\*\*/g, '');
+  console.log(game);
+
+  const relevantContent = game.match(/==.*?==/gs);
+
+  if (!relevantContent) {
+    console.error("No se encontraron niveles delimitados por '=='.");
+    return [];
+  }
+
+  // Unir el contenido relevante en un string limpio
+  let cleanedText = relevantContent.join('\n');
+
+  cleanedText = game.replace(/\*\*.*?\*\*/g, '');
 
   const levels = cleanedText
     .split(/==/)
@@ -136,7 +148,7 @@ const generateGame = async prompt => {
       return { ...l, level: idx + 1 };
     })
     .slice(0, 10);
-  console.log(questionsWithLevels.length);
+
   return questionsWithLevels;
 };
 

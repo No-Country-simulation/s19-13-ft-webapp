@@ -6,7 +6,7 @@ Gastón Federico Nahuel Gómez
 [Linkedin](https://www.linkedin.com/in/gaston-gomez1997/)
 
 Marian Miranda
-[Linkedin]()
+[Linkedin](www.linkedin.com/in/marian-miranda)
 
 Dewinson Cruz
 [Linkedin]()
