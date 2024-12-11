@@ -16,26 +16,26 @@ const Home = () => {
   return (
     <>
       {/* Seccion del Header */}
-      <div className='flex flex-row p-8 bg-white'>
-        <picture className='w-1/2'>
-          <img src={HeaderImage} alt='' />
-        </picture>
-        <section className='flex flex-col w-1/2 text-end justify-center items-end py-10 gap-y-12 h-full'>
-          <h1 className='text-6xl font-Pangolin'>
-            ¿Necesitas mejorar la participación en clase?
-          </h1>
-          <p className='font-Roboto text-2xl'>
-            El aprendizaje interactivo aumenta la participación y motivación del
-            alumno, permitiéndole <strong>retener mejor la información</strong>{' '}
-            al involucrarse activamente en el proceso de aprendizaje.
-          </p>
-          <Link to='crear-juego' className='w-full flex justify-center'>
-            <button className='bg-white text-RosadoC border-RosadoC border-solid border-2 p-2 rounded-md hover:text-white hover:bg-RosadoC transition duration-500 text-2xl font-Roboto'>
-              Crear actividad
-            </button>
-          </Link>
-        </section>
-      </div>
+      <div className='flex flex-col md:flex-row p-4 md:p-8 bg-white'>
+      <picture className='w-full md:w-1/2 mb-6 md:mb-0 flex justify-center'>
+        <img src={HeaderImage} alt='' className='max-w-full h-auto' />
+      </picture>
+      <section className='flex flex-col w-full md:w-1/2 text-center md:text-end justify-center items-center md:items-end py-4 md:py-10 gap-y-6 md:gap-y-12 h-full'>
+        <h1 className='text-4xl md:text-6xl font-Pangolin'>
+          ¿Necesitas mejorar la participación en clase?
+        </h1>
+        <p className='font-Roboto text-xl md:text-2xl'>
+          El aprendizaje interactivo aumenta la participación y motivación del
+          alumno, permitiéndole <strong>retener mejor la información</strong>{' '}
+          al involucrarse activamente en el proceso de aprendizaje.
+        </p>
+        <Link to='crear-juego' className='w-full flex justify-center'>
+          <button className='bg-white text-RosadoC border-RosadoC border-solid border-2 p-2 rounded-md hover:text-white hover:bg-RosadoC transition duration-500 text-xl md:text-2xl font-Roboto'>
+            Crear actividad
+          </button>
+        </Link>
+      </section>
+    </div>
       {/*Seccion de Categorias */}
       <section className='mt-8 w-4/5 mx-auto'>
         <div className='bg-white font-Roboto py-5'>
