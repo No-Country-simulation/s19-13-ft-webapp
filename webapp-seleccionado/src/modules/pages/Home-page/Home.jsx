@@ -50,13 +50,13 @@ const Home = () => {
 
       {/* Seccion Como Funciona */}
 
-      <div className='flex justify-center items-center bg-white p-12 drop-shadow max-w-fit mx-auto relative z-10 mb-[-100px] mt-40'>
+      <div className='flex justify-center items-center bg-white p-12 drop-shadow max-w-fit mx-auto relative z-10 mb-[-100px] mt-40 '>
         <section className='flex flex-col'>
           <h1 className='text-center m-4 font-Roboto text-6xl mb-14 drop-shadow'>
             ¿Como funciona?
           </h1>
-          <div className='flex flex-row gap-16'>
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center rounded-2xl text-center shadow-custom hover:scale-105'>
+          <div className='md:flex md:gap-16 justify-items-center '>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400 mt-3 justify-center items-center rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={CreateLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Crear</span>
               <p className='font-Roboto text-black'>
@@ -64,7 +64,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  text-center  rounded-2xl shadow-custom hover:scale-105'>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400 mt-3  justify-center items-center  text-center  rounded-2xl shadow-custom hover:scale-105'>
               <img src={ShareLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>
                 Compartir
@@ -74,7 +74,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  rounded-2xl text-center shadow-custom hover:scale-105'>
+            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400 mt-3 justify-center items-center  rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={PlayLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Jugar</span>
               <p className='font-Roboto text-black'>
