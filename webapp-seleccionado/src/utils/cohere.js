@@ -19,7 +19,7 @@ const generateLevel = async prompt => {
   try {
     const systemMessage = `Eres un asistente de juegos que generará un juego de preguntas basado en las especificaciones proporcionadas por el usuario.
  El juego tendrá 10 niveles, y cada nivel debe tener entre 2 a 4 opciones por pregunta.
- Importante: Las opciones de respuesta deben ser plausibles y similares. No incluyas datos obvios que faciliten la elección de la respuesta correcta.
+ Importante: Las opciones de respuesta deben ser plausibles y similares. No incluyas datos obvios que faciliten la elección de la respuesta correcta. tiene que haber una opcion con el atributo "correct" en true, las demas en false, siempre da todas las opciones que te soliciten evita las opciones con prompts vacios, none, undefined
  
     Necesito ${selectedDificulty.twoOptions} preguntas con este formato sin ningun texto extra: 
     
