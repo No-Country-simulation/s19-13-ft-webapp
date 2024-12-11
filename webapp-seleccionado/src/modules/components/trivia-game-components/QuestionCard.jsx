@@ -11,7 +11,7 @@ function QuestionCard({
   return (
     <AnimatedContainer
       transitionType={transitionType}
-      className=' bg-white p-6 rounded-sm shadow-lg max-w-2xl w-full'
+      className=' bg-white p-6 rounded-md shadow-lg max-w-2xl w-full'
     >
       <h2 className='text-xl font-semibold mb-4 text-black'>
         {question.question}

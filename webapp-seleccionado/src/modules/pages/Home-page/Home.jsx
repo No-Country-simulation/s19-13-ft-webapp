@@ -16,21 +16,21 @@ const Home = () => {
   return (
     <>
       {/* Seccion del Header */}
-      <div className='flex flex-row p-8 bg-white'>
-        <picture className='w-1/2'>
-          <img src={HeaderImage} alt='' />
+      <div className='flex flex-col md:flex-row p-4 md:p-8 bg-white'>
+        <picture className='w-full md:w-1/2 mb-6 md:mb-0 flex justify-center'>
+          <img src={HeaderImage} alt='' className='max-w-full h-auto' />
         </picture>
-        <section className='flex flex-col w-1/2 text-end justify-center items-end py-10 gap-y-12 h-full'>
-          <h1 className='text-6xl font-Pangolin'>
+        <section className='flex flex-col w-full md:w-1/2 text-center md:text-end justify-center items-center md:items-end py-4 md:py-10 gap-y-6 md:gap-y-12 h-full'>
+          <h1 className='text-4xl md:text-6xl font-Pangolin'>
             ¿Necesitas mejorar la participación en clase?
           </h1>
-          <p className='font-Roboto text-2xl'>
+          <p className='font-Roboto text-xl md:text-2xl'>
             El aprendizaje interactivo aumenta la participación y motivación del
             alumno, permitiéndole <strong>retener mejor la información</strong>{' '}
             al involucrarse activamente en el proceso de aprendizaje.
           </p>
           <Link to='crear-juego' className='w-full flex justify-center'>
-            <button className='bg-white text-RosadoC border-RosadoC border-solid border-2 p-2 rounded-md hover:text-white hover:bg-RosadoC transition duration-500 text-2xl font-Roboto'>
+            <button className='bg-white text-RosadoC border-RosadoC border-solid border-2 p-2 rounded-md hover:text-white hover:bg-RosadoC transition duration-500 text-xl md:text-2xl font-Roboto'>
               Crear actividad
             </button>
           </Link>
@@ -50,13 +50,13 @@ const Home = () => {
 
       {/* Seccion Como Funciona */}
 
-      <div className='flex justify-center items-center bg-white p-12 drop-shadow max-w-fit mx-auto relative z-10 mb-[-100px] mt-40'>
+      <div className='flex justify-center items-center bg-white p-12 drop-shadow max-w-fit mx-auto relative z-10 mb-[-100px] mt-40 '>
         <section className='flex flex-col'>
           <h1 className='text-center m-4 font-Roboto text-6xl mb-14 drop-shadow'>
             ¿Como funciona?
           </h1>
-          <div className='flex flex-row gap-16'>
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center rounded-2xl text-center shadow-custom'>
+          <div className='md:flex md:gap-16 justify-items-center '>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400 mt-3 justify-center items-center rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={CreateLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Crear</span>
               <p className='font-Roboto text-black'>
@@ -64,7 +64,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  text-center  rounded-2xl shadow-custom'>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400 mt-3  justify-center items-center  text-center  rounded-2xl shadow-custom hover:scale-105'>
               <img src={ShareLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>
                 Compartir
@@ -74,7 +74,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  rounded-2xl text-center shadow-custom'>
+            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400 mt-3 justify-center items-center  rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={PlayLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Jugar</span>
               <p className='font-Roboto text-black'>
@@ -92,33 +92,40 @@ const Home = () => {
         <div className='bg-AzulM h-40rem flex flex-col justify-end'>
           <div className='mb-32'>
             <h1 className='text-center text-5xl text-white font-Roboto mb-10 drop-shadow-md'>
-              Nuestras plantillas
+              Nuestras plantillas de juegos
             </h1>
-
             <section className='grid grid-cols-5 p-8 gap-8 '>
-              <picture className='flex flex-col justify-center items-center gap-4'>
-                <img src={CrucigramaLogo} alt='' className=' w-28 ' />
-                <p className='text-white text-center'>Crucigrama</p>
-              </picture>
-
-              <picture className='flex flex-col justify-center items-center gap-4'>
-                <img src={PuzzleLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Rompecabezas</p>
-              </picture>
-
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={TriviaLogo} alt='' className=' w-28' />
                 <p className='text-white text-center'>Trivia</p>
               </picture>
 
+              <Link to='/Sudoku'>
+                <picture className='flex flex-col justify-center items-center gap-4'>
+                  <img src={CrucigramaLogo} alt='' className=' w-28 ' />
+                  <p className='text-white text-center'>Sudoku</p>
+                </picture>
+              </Link>
+
+              <picture className='flex flex-col justify-center items-center gap-4'>
+                <img src={PuzzleLogo} alt='' className=' w-28' />
+                <p className='text-white text-center'>
+                  Rompecabezas (Proximamente)
+                </p>
+              </picture>
+
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={MemoryLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Juego de la memoria</p>
+                <p className='text-white text-center'>
+                  Juego de la memoria (Proximamente)
+                </p>
               </picture>
 
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={SopaLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Sopa de letras</p>
+                <p className='text-white text-center'>
+                  Sopa de letras (Proximamente)
+                </p>
               </picture>
             </section>
           </div>
