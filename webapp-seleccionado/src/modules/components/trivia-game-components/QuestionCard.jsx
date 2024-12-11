@@ -5,7 +5,7 @@ function QuestionCard({ question, onAnswer, isAnswered, selectedAnswer, transiti
   return (
     <AnimatedContainer 
       transitionType={transitionType}
-      className=" bg-white p-6 rounded-sm shadow-lg max-w-2xl w-full"
+      className=" bg-white p-6 rounded-md shadow-lg max-w-2xl w-full"
     >
       <h2 className="text-xl font-semibold mb-4 text-black">{question.question}</h2>
       <div className="grid grid-rows-2 grid-cols-2 gap-3">

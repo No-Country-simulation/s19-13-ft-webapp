@@ -51,7 +51,7 @@ function TriviaGameLocal() {
 
   if (!gameData) {
     return (
-      <div className='min-h-screen flex items-center justify-center'>
+      <div className='min-h-screen bg-custom-l flex items-center justify-center'>
         <div className='text-xl'>
           No hay juego disponible en el almacenamiento local
         </div>
@@ -61,7 +61,7 @@ function TriviaGameLocal() {
 
   if (gameFinished) {
     return (
-      <div className='min-h-screen bg-gray-100 flex items-center justify-center p-4'>
+      <div className='min-h-screen bg-custom-l flex items-center justify-center p-4'>
         <GameSummary
           correctAnswers={correctAnswers}
           totalQuestions={gameData.game.length}
@@ -74,11 +74,11 @@ function TriviaGameLocal() {
 
   return (
     <div className='min-h-screen bg-custom-l flex flex-col items-center p-4 pt-8'>
-      <div className='w-full max-w-2xl mb-8'>
+      <div className='w-full bg-white p-4 rounded-md max-w-2xl mb-8'>
         <h1 className='text-3xl font-bold text-center font-Pangolin text-black mb-2'>
           {gameData.title}
         </h1>
-        <p className='text-center text-gray-900 mb-6'>{gameData.description}</p>
+        <p className='text-center text-gray-900 font-Roboto mb-6'>{gameData.description}</p>
       </div>
 
       <ProgressBar

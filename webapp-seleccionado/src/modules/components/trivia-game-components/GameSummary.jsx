@@ -18,7 +18,7 @@ function GameSummary({ correctAnswers, totalQuestions, onRestart, transitionType
       </p>
       <button
         onClick={onRestart}
-        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+        className="bg-blueSecondary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
       >
         Jugar de nuevo
       </button>
