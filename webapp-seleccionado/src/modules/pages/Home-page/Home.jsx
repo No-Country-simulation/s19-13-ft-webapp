@@ -56,7 +56,7 @@ const Home = () => {
             ¿Como funciona?
           </h1>
           <div className='flex flex-row gap-16'>
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center rounded-2xl text-center shadow-custom'>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={CreateLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Crear</span>
               <p className='font-Roboto text-black'>
@@ -64,7 +64,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  text-center  rounded-2xl shadow-custom'>
+            <div className='bg-Gris p-4 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  text-center  rounded-2xl shadow-custom hover:scale-105'>
               <img src={ShareLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>
                 Compartir
@@ -74,7 +74,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  rounded-2xl text-center shadow-custom'>
+            <div className='bg-Gris p-2 flex flex-col gap-2  w-60 border-gray-400  justify-center items-center  rounded-2xl text-center shadow-custom hover:scale-105'>
               <img src={PlayLogo} alt='' className='w-2/4' />
               <span className='text-RosadoC font-semibold text-2xl'>Jugar</span>
               <p className='font-Roboto text-black'>
@@ -92,18 +92,18 @@ const Home = () => {
         <div className='bg-AzulM h-40rem flex flex-col justify-end'>
           <div className='mb-32'>
             <h1 className='text-center text-5xl text-white font-Roboto mb-10 drop-shadow-md'>
-              Nuestras plantillas
+              Nuestras plantillas de juegos
             </h1>
 
             <section className='grid grid-cols-5 p-8 gap-8 '>
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={CrucigramaLogo} alt='' className=' w-28 ' />
-                <p className='text-white text-center'>Crucigrama</p>
+                <p className='text-white text-center'>Crucigrama (Proximamente)</p>
               </picture>
 
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={PuzzleLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Rompecabezas</p>
+                <p className='text-white text-center'>Rompecabezas (Proximamente)</p>
               </picture>
 
               <picture className='flex flex-col justify-center items-center gap-4'>
@@ -113,12 +113,12 @@ const Home = () => {
 
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={MemoryLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Juego de la memoria</p>
+                <p className='text-white text-center'>Juego de la memoria (Proximamente)</p>
               </picture>
 
               <picture className='flex flex-col justify-center items-center gap-4'>
                 <img src={SopaLogo} alt='' className=' w-28' />
-                <p className='text-white text-center'>Sopa de letras</p>
+                <p className='text-white text-center'>Sopa de letras (Proximamente)</p>
               </picture>
             </section>
           </div>
@@ -126,10 +126,10 @@ const Home = () => {
       </Link>
 
       {/* Section de Objetivo de la app */}
-
+      
       <div className=' flex flex-col p-8'>
         <h1 className='text-center text-4xl  text-white font-Roboto mb-10'>
-          ¿Porque usar Nombre?
+          ¿Porque usar PlayClass?
         </h1>
 
         <section className='flex flex-col w-full font-Roboto'>
